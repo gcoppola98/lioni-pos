@@ -176,7 +176,6 @@ const items = [
   { id: 'A15', name: '1 LB. Macaroni Salad', price: 6, category: 'Appetizers' },
   { id: 'A16', name: '1/2 LB. Coleslaw', price: 3, category: 'Appetizers' },
   { id: 'A17', name: '1 LB. Coleslaw', price: 6, category: 'Appetizers' },
-  { id: 'A18', name: 'Cup of Pickles', price: 2, category: 'Appetizers' },
 
   { id: "B1", name: "20oz Soda", price: 3.0, category: "Beverages" },
   { id: "B2", name: "2 Liter Soda", price: 5.0, category: "Beverages" },
