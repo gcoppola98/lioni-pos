@@ -319,7 +319,25 @@ const specialCustomAddons = [
   { name: 'Just Proscuitto or Veal (No Cheese)', price: 16 },
 ];
 
-const categories = ['All', 'Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes', 'Chips', 'Bread Items', 'Appetizers', "Kid's Menu", 'Beverages', 'Desserts', 'Grocery Items', 'Milk'];
+const categories = [
+  'All',
+  'Regular Heroes',
+  'Smoked Mozzarella Heroes',
+  '"P" Heroes',
+  'Chips',
+  'Bread Items',
+  'Appetizers',
+  "Kid's Menu",
+  'Beverages',
+  'Desserts',
+  'Grocery Items',
+  'Milk',
+  'Party Heroes - Catering',
+  'Hot Food - Catering',
+  'Platters - Catering',
+  'Salads - Catering',
+  'Breakfast - Catering'
+];
 
 function App() {
   const [cart, setCart] = useState([]);
