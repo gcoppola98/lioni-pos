@@ -716,7 +716,9 @@ return (
         }
       `}</style>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, minWidth: 0, marginBottom: 20 }}>
-        <h1 style={{ fontSize: '1.8rem', minWidth: 0, margin: 0, color: '#008C45' }}>Lioni POS</h1>
+        <button type="button" aria-label="Return to Lioni POS home" title="Back to home" onClick={() => { setActiveCategory('All'); setSearchTerm(''); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ padding: 0, border: 'none', background: 'transparent', cursor: 'pointer', flexShrink: 1, minWidth: 0 }}>
+          <img src={`${process.env.PUBLIC_URL}/lioni-logo.png`} alt="Lioni POS — Home" style={{ display: 'block', width: 'clamp(135px, 38vw, 205px)', height: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
+        </button>
         <button onClick={() => setShowCart(true)} style={{ position: 'relative', flexShrink: 0, background: '#008C45', color: '#fff', border: 'none', borderRadius: 20, padding: '6px 12px', fontSize: 14 }}>
           🛒 {cart.length} • ${subtotal.toFixed(2)}
         </button>
