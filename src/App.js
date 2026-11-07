@@ -1,162 +1,163 @@
 import React, { useState } from 'react';
 
 const items = [
+  // Party Heroes: per-foot pricing plus a single $3 cutting board fee.
   { id: '#22', name: 'Custom', price: 0 },
-  { id: '#1', name: '#1', price: 16, category: 'Regular Heroes' },
-  { id: '#2', name: '#2', price: 19, category: 'Regular Heroes' },
-  { id: '#3', name: '#3', price: 20, category: 'Regular Heroes' },
-  { id: '#4', name: '#4', price: 13, category: 'Regular Heroes' },
-  { id: '#5', name: '#5', price: 22, category: 'Regular Heroes' },
-  { id: '#6', name: '#6', price: 19, category: 'Regular Heroes' },
-  { id: '#7', name: '#7', price: 23, category: 'Regular Heroes' },
-  { id: '#8', name: '#8', price: 18, category: 'Regular Heroes' },
-  { id: '#9', name: '#9', price: 19, category: 'Regular Heroes' },
-  { id: '#10', name: '#10', price: 17, category: 'Regular Heroes' },
-  { id: '#11', name: '#11', price: 14, category: 'Regular Heroes' },
-  { id: '#12', name: '#12', price: 22, category: 'Regular Heroes' },
-  { id: '#13', name: '#13', price: 19, category: 'Regular Heroes' },
-  { id: '#14', name: '#14', price: 18, category: 'Regular Heroes' },
-  { id: '#15', name: '#15', price: 17, category: 'Regular Heroes' },
-  { id: '#16', name: '#16', price: 17, category: 'Regular Heroes' },
-  { id: '#17', name: '#17', price: 19, category: 'Regular Heroes' },
-  { id: '#18', name: '#18', price: 15, category: 'Regular Heroes' },
-  { id: '#19', name: '#19', price: 16, category: 'Regular Heroes' },
-  { id: '#20', name: '#20', price: 16, category: 'Regular Heroes' },
-  { id: '#21', name: '#21', price: 22, category: 'Regular Heroes' },
-  { id: '#23', name: '#23', price: 19, category: 'Regular Heroes' },
-  { id: '#24', name: '#24', price: 18, category: 'Regular Heroes' },
-  { id: '#25', name: '#25', price: 25, category: 'Regular Heroes' },
-  { id: '#26', name: '#26', price: 21, category: 'Regular Heroes' },
-  { id: '#27', name: '#27', price: 14, category: 'Regular Heroes' },
-  { id: '#28', name: '#28', price: 19, category: 'Regular Heroes' },
-  { id: '#29', name: '#29', price: 16, category: 'Regular Heroes' },
-  { id: '#30', name: '#30', price: 20, category: 'Regular Heroes' },
-  { id: '#31', name: '#31', price: 16, category: 'Regular Heroes' },
-  { id: '#32', name: '#32', price: 20, category: 'Regular Heroes' },
-  { id: '#33', name: '#33', price: 16, category: 'Regular Heroes' },
-  { id: '#34', name: '#34', price: 18, category: 'Regular Heroes' },
-  { id: '#35', name: '#35', price: 16, category: 'Regular Heroes' },
-  { id: '#36', name: '#36', price: 12, category: 'Regular Heroes' },
-  { id: '#37', name: '#37', price: 16, category: 'Regular Heroes' },
-  { id: '#38', name: '#38', price: 16, category: 'Regular Heroes' },
-  { id: '#39', name: '#39', price: 14, category: 'Regular Heroes' },
-  { id: '#40', name: '#40', price: 14, category: 'Regular Heroes' },
-  { id: '#41', name: '#41', price: 21, category: 'Regular Heroes' },
-  { id: '#42', name: '#42', price: 19, category: 'Regular Heroes' },
-  { id: '#43', name: '#43', price: 19, category: 'Regular Heroes' },
-  { id: '#44', name: '#44', price: 18, category: 'Regular Heroes' },
-  { id: '#45', name: '#45', price: 15, category: 'Regular Heroes' },
-  { id: '#46', name: '#46', price: 20, category: 'Regular Heroes' },
-  { id: '#47', name: '#47', price: 27, category: 'Regular Heroes' },
-  { id: '#48', name: '#48', price: 19, category: 'Regular Heroes' },
-  { id: '#49', name: '#49', price: 16, category: 'Regular Heroes' },
-  { id: '#50', name: '#50', price: 18, category: 'Regular Heroes' },
-  { id: '#51', name: '#51', price: 14, category: 'Regular Heroes' },
-  { id: '#52', name: '#52', price: 18, category: 'Regular Heroes' },
-  { id: '#53', name: '#53', price: 16, category: 'Regular Heroes' },
-  { id: '#54', name: '#54', price: 20, category: 'Regular Heroes' },
-  { id: '#55', name: '#55', price: 21, category: 'Regular Heroes' },
-  { id: '#56', name: '#56', price: 16, category: 'Regular Heroes' },
-  { id: '#57', name: '#57', price: 20, category: 'Regular Heroes' },
-  { id: '#58', name: '#58', price: 16, category: 'Regular Heroes' },
-  { id: '#59', name: '#59', price: 23, category: 'Regular Heroes' },
-  { id: '#60', name: '#60', price: 18, category: 'Regular Heroes' },
-  { id: '#61', name: '#61', price: 20, category: 'Regular Heroes' },
-  { id: '#62', name: '#62', price: 22, category: 'Regular Heroes' },
-  { id: '#63', name: '#63', price: 21, category: 'Regular Heroes' },
-  { id: '#64', name: '#64', price: 19, category: 'Regular Heroes' },
-  { id: '#65', name: '#65', price: 20, category: 'Regular Heroes' },
-  { id: '#66', name: '#66', price: 20, category: 'Regular Heroes' },
-  { id: '#67', name: '#67', price: 16, category: 'Regular Heroes' },
-  { id: '#68', name: '#68', price: 19, category: 'Regular Heroes' },
-  { id: '#69', name: '#69', price: 25, category: 'Regular Heroes' },
-  { id: '#70', name: '#70', price: 18, category: 'Regular Heroes' },
-  { id: '#71', name: '#71', price: 20, category: 'Regular Heroes' },
-  { id: '#72', name: '#72', price: 16, category: 'Regular Heroes' },
-  { id: '#73', name: '#73', price: 18, category: 'Regular Heroes' },
-  { id: '#74', name: '#74', price: 16, category: 'Regular Heroes' },
-  { id: '#75', name: '#75', price: 18, category: 'Regular Heroes' },
-  { id: '#76', name: '#76', price: 21, category: 'Regular Heroes' },
-  { id: '#77', name: '#77', price: 16, category: 'Regular Heroes' },
-  { id: '#78', name: '#78', price: 20, category: 'Regular Heroes' },
-  { id: '#79', name: '#79', price: 15, category: 'Regular Heroes' },
-  { id: '#80', name: '#80', price: 22, category: 'Regular Heroes' },
-  { id: '#81', name: '#81', price: 25, category: 'Regular Heroes' },
-  { id: '#82', name: '#82', price: 18, category: 'Regular Heroes' },
-  { id: '#83', name: '#83', price: 15, category: 'Regular Heroes' },
-  { id: '#84', name: '#84', price: 16, category: 'Regular Heroes' },
- { id: '#85', name: '#85', price: 20, category: 'Regular Heroes' },
-  { id: '#86', name: '#86', price: 16, category: 'Regular Heroes' },
-  { id: '#87', name: '#87', price: 20, category: 'Regular Heroes' },
-  { id: '#88', name: '#88', price: 18, category: 'Regular Heroes' },
-  { id: '#89', name: '#89', price: 18, category: 'Regular Heroes' },
-  { id: '#90', name: '#90', price: 20, category: 'Regular Heroes' },
-  { id: '#91', name: '#91', price: 18, category: 'Regular Heroes' },
-  { id: '#92', name: '#92', price: 18, category: 'Regular Heroes' },
-  { id: '#93', name: '#93', price: 18, category: 'Regular Heroes' },
-  { id: '#94', name: '#94', price: 25, category: 'Regular Heroes' },
-  { id: '#95', name: '#95', price: 23, category: 'Regular Heroes' },
-  { id: '#96', name: '#96', price: 20, category: 'Regular Heroes' },
-  { id: '#97', name: '#97', price: 19, category: 'Regular Heroes' },
-  { id: '#98', name: '#98', price: 25, category: 'Regular Heroes' },
-  { id: '#99', name: '#99', price: 21, category: 'Regular Heroes' },
-  { id: '#100', name: '#100', price: 18, category: 'Regular Heroes' },
-  { id: '#101', name: '#101', price: 20, category: 'Regular Heroes' },
-  { id: '#102', name: '#102', price: 25, category: 'Regular Heroes' },
-  { id: '#103', name: '#103', price: 23, category: 'Regular Heroes' },
-  { id: '#375', name: '#375', price: 19, category: 'Regular Heroes' },
-  { id: '#105', name: '#105', price: 18, category: 'Regular Heroes' },
-  { id: '#106', name: '#106', price: 27, category: 'Regular Heroes' },
-  { id: '#107', name: '#107', price: 25, category: 'Regular Heroes' },
-  { id: '#108', name: '#108', price: 28, category: 'Regular Heroes' },
-  { id: '#109', name: '#109', price: 21, category: 'Regular Heroes' },
-  { id: '#110', name: '#110', price: 23, category: 'Regular Heroes' },
-  { id: '#111', name: '#111', price: 25, category: 'Regular Heroes' },
-  { id: '#112', name: '#112', price: 20, category: 'Regular Heroes' },
-  { id: '#113', name: '#113', price: 24, category: 'Regular Heroes' },
-  { id: '#114', name: '#114', price: 22, category: 'Regular Heroes' },
-  { id: '#115', name: '#115', price: 29, category: 'Regular Heroes' },
-  { id: '#116', name: '#116', price: 25, category: 'Regular Heroes' },
-  { id: '#117', name: '#117', price: 22, category: 'Regular Heroes' },
-  { id: '#118', name: '#118', price: 25, category: 'Regular Heroes' },
-  { id: '#119', name: '#119', price: 29, category: 'Regular Heroes' },
-  { id: '#120', name: '#120', price: 20, category: 'Regular Heroes' },
-  { id: '#121', name: '#121', price: 22, category: 'Regular Heroes' },
-  { id: '#122', name: '#122', price: 24, category: 'Regular Heroes' },
-  { id: '#123', name: '#123', price: 21, category: 'Regular Heroes' },
-  { id: '#124', name: '#124', price: 23, category: 'Regular Heroes' },
-  { id: '#125', name: '#125', price: 28, category: 'Regular Heroes' },
-  { id: '#126', name: '#126', price: 19, category: 'Regular Heroes' },
-  { id: '#127', name: '#127', price: 21, category: 'Regular Heroes' },
-  { id: '#128', name: '#128', price: 25, category: 'Regular Heroes' },
-  { id: '#129', name: '#129', price: 25, category: 'Regular Heroes' },
-  { id: '#130', name: '#130', price: 20, category: 'Regular Heroes' },
-  { id: '#131', name: '#131', price: 21, category: 'Regular Heroes' },
-  { id: '#132', name: '#132', price: 27, category: 'Regular Heroes' },
-  { id: '#133', name: '#133', price: 26, category: 'Regular Heroes' },
-  { id: '#134', name: '#134', price: 18, category: 'Regular Heroes' },
-  { id: '#135', name: '#135', price: 21, category: 'Regular Heroes' },
-  { id: '#136', name: '#136', price: 23, category: 'Regular Heroes' },
-  { id: '#137', name: '#137', price: 25, category: 'Regular Heroes' },
-  { id: '#138', name: '#138', price: 26, category: 'Regular Heroes' },
-  { id: '#139', name: '#139', price: 25, category: 'Regular Heroes' },
-  { id: '#1A', name: '#1A', price: 19, category: 'Smoked Mozzarella Heroes' },
-  { id: '#2A', name: '#2A', price: 19, category: 'Smoked Mozzarella Heroes' },
-  { id: '#3A', name: '#3A', price: 22, category: 'Smoked Mozzarella Heroes' },
-  { id: '#4A', name: '#4A', price: 16, category: 'Smoked Mozzarella Heroes' },
-  { id: '#5A', name: '#5A', price: 20, category: 'Smoked Mozzarella Heroes' },
-  { id: '#6A', name: '#6A', price: 19, category: 'Smoked Mozzarella Heroes' },
-  { id: '#7A', name: '#7A', price: 20, category: 'Smoked Mozzarella Heroes' },
-  { id: '#8A', name: '#8A', price: 22, category: 'Smoked Mozzarella Heroes' },
-  { id: '#9A', name: '#9A', price: 21, category: 'Smoked Mozzarella Heroes' },
-  { id: '#10A', name: '#10A', price: 16, category: 'Smoked Mozzarella Heroes' },
-  { id: '#11A', name: '#11A', price: 18, category: 'Smoked Mozzarella Heroes' },
-  { id: 'P1', name: 'P1', price: 24, category: '"P" Heroes' },
-  { id: 'P2', name: 'P2', price: 24, category: '"P" Heroes' },
-  { id: 'P3', name: 'P3', price: 19, category: '"P" Heroes' },
-  { id: 'P4', name: 'P4', price: 20, category: '"P" Heroes' },
-  { id: 'P5', name: 'P5', price: 24, category: '"P" Heroes' },
-  { id: 'P6', name: 'P6', price: 24, category: '"P" Heroes' },
+  { id: '#1', name: '#1', price: 16, category: 'Regular Heroes' , description: "Salami, Fresh Mozzarella, Olive Oil, Salt, Black Pepper And Oregano" },
+  { id: '#2', name: '#2', price: 19, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Olive Oil And Black Pepper" },
+  { id: '#3', name: '#3', price: 20, category: 'Regular Heroes' , description: "Ham, Lioni Fresh Mozzarella, Basil, Sun-Dried Tomatoes, Olive Oil, Salt And Black Pepper" },
+  { id: '#4', name: '#4', price: 13, category: 'Regular Heroes' , description: "Lioni Fresh Mozzarella, Tomato, Basil, Olive Oil, Salt And Pepper" },
+  { id: '#5', name: '#5', price: 22, category: 'Regular Heroes' , description: "Ham, Salami, Swiss Cheese, Olive Oil, And Basil Mix" },
+  { id: '#6', name: '#6', price: 19, category: 'Regular Heroes' , description: "Turkey, Lioni Fresh Mozzarella, Roasted Peppers, Olive Oil, Oregano, Black Pepper" },
+  { id: '#7', name: '#7', price: 23, category: 'Regular Heroes' , description: "Sweet Capicola, Ham, Lioni Fresh Mozzarella, Sun-Dried Tomatoes, Vinegar, Olive Oil, Oregano, Salt And Black Pepper" },
+  { id: '#8', name: '#8', price: 18, category: 'Regular Heroes' , description: "Hot Capicola, Yellow American Cheese Or Jalapeño Cheese And A Hot Stuffed Pepper" },
+  { id: '#9', name: '#9', price: 19, category: 'Regular Heroes' , description: "Salami, Lioni Fresh Mozzarella , Roasted Peppers, Olive Oil, Salt And Black Pepper" },
+  { id: '#10', name: '#10', price: 17, category: 'Regular Heroes' , description: "Mortadella, Lioni Fresh Mozzarella, Lettuce And Black Pepper" },
+  { id: '#11', name: '#11', price: 14, category: 'Regular Heroes' , description: "Roasted Peppers, Lioni Fresh Mozzarella, Green Pesto Sauce , A Drizzle Of Olive Oil And Black Pepper" },
+  { id: '#12', name: '#12', price: 22, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Sweet Stuffed Peppers, Lettuce, Olive Oil, Salt And Black Pepper" },
+  { id: '#13', name: '#13', price: 19, category: 'Regular Heroes' , description: "Ham, Bologna, White American Cheese, Lettuce, Mayo And Tomatoes" },
+  { id: '#14', name: '#14', price: 18, category: 'Regular Heroes' , description: "Hot Or Sweet Capicola, Lioni Fresh Mozzarella, Tomatoes, Fresh Basil, Oregano, Olive Oil, Salt And Black Pepper" },
+  { id: '#15', name: '#15', price: 17, category: 'Regular Heroes' , description: "Honey Roasted Turkey, Lioni Fresh Mozzarella, Lettuce, Tomato, Vinegar, Olive Oil, Salt And Black Pepper" },
+  { id: '#16', name: '#16', price: 17, category: 'Regular Heroes' , description: "Roast Beef, Lioni Fresh Mozzarella, Lettuce, Mayo, Salt And Black Pepper" },
+  { id: '#17', name: '#17', price: 19, category: 'Regular Heroes' , description: "Olive Loaf, Sopressata, White American, Lettuce And Mayo" },
+  { id: '#18', name: '#18', price: 15, category: 'Regular Heroes' , description: "Grilled Italian Sausage, Olive Oil, Vinegar, Lettuce, Salt, Black Pepper, And A Pinch Of Oregano" },
+  { id: '#19', name: '#19', price: 16, category: 'Regular Heroes' , description: "Roast Pork, Lioni Smoked Mozzarella, Olive Oil And Black Pepper" },
+  { id: '#20', name: '#20', price: 16, category: 'Regular Heroes' , description: "Pepper Ham, Swiss Cheese, Tomato And Mayo" },
+  { id: '#21', name: '#21', price: 22, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Pesto Sauce, Olive Oil, And Black Pepper" },
+  { id: '#23', name: '#23', price: 19, category: 'Regular Heroes' , description: "Pepperoni, Lioni Fresh Mozzarella, Roasted Peppers, Olive Oil And Lettuce" },
+  { id: '#24', name: '#24', price: 18, category: 'Regular Heroes' , description: "Bologna, White American Cheese, Ham And Mustard" },
+  { id: '#25', name: '#25', price: 25, category: 'Regular Heroes' , description: "Hot Capicola, Salami, Pepperoni, Swiss, Provolone, Stuffed Peppers And Deli Mustard" },
+  { id: '#26', name: '#26', price: 21, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Arugula And Balsamic Vinegar" },
+  { id: '#27', name: '#27', price: 14, category: 'Regular Heroes' , description: "Lioni Fresh Mozzarella , Tomatoes, Arugula, Basil, Olive Oil, Oregano, Salt And Pepper" },
+  { id: '#28', name: '#28', price: 19, category: 'Regular Heroes' , description: "Salami, Provolone, Arugula, Sun-Dried Tomatoes, Olive Oil, Oregano, And Pepper" },
+  { id: '#29', name: '#29', price: 16, category: 'Regular Heroes' , description: "Meatball Parmigiana" },
+  { id: '#30', name: '#30', price: 20, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Tomatoes, Olive Oil, Oregano, Salt And Fresh Basil" },
+  { id: '#31', name: '#31', price: 16, category: 'Regular Heroes' , description: "Sweet Capicola, Provolone, Lettuce, Tomatoes, Mustard And Mayo" },
+  { id: '#32', name: '#32', price: 20, category: 'Regular Heroes' , description: "Grilled Chicken, Lioni Fresh Mozzarella, Roasted Peppers, Olive Oil, Vinegar, Salt And Pepper" },
+  { id: '#33', name: '#33', price: 16, category: 'Regular Heroes' , description: "Sweet Or Hot Grilled Italian Sausage, And Bruschetta" },
+  { id: '#34', name: '#34', price: 18, category: 'Regular Heroes' , description: "Hot Italian Sausage, Bruschetta, And Lioni Fresh Mozzarella" },
+  { id: '#35', name: '#35', price: 16, category: 'Regular Heroes' , description: "Chicken Cutlet Parmigiana" },
+  { id: '#36', name: '#36', price: 12, category: 'Regular Heroes' , description: "Potatoes And Eggs" },
+  { id: '#37', name: '#37', price: 16, category: 'Regular Heroes' , description: "Turkey, American Cheese, Tomatoes And Mustard" },
+  { id: '#38', name: '#38', price: 16, category: 'Regular Heroes' , description: "Bologna, Lioni Fresh Mozzarella, Lettuce, Mayo, Salt And Pepper" },
+  { id: '#39', name: '#39', price: 14, category: 'Regular Heroes' , description: "Tuna Fish, Lioni Fresh Mozzarella, Lettuce And Tomato" },
+  { id: '#40', name: '#40', price: 14, category: 'Regular Heroes' , description: "Italian Tuna Fish, Lettuce , Tomato, And Onions" },
+  { id: '#41', name: '#41', price: 21, category: 'Regular Heroes' , description: "Milk-Fed Veal Parmigiana With Grated Cheese" },
+  { id: '#42', name: '#42', price: 19, category: 'Regular Heroes' , description: "Hot Sopressata, Bruschetta And Lioni Fresh Mozzarella" },
+  { id: '#43', name: '#43', price: 19, category: 'Regular Heroes' , description: "Sopressata, Lioni Fresh Mozzarella And Red Pesto" },
+  { id: '#44', name: '#44', price: 18, category: 'Regular Heroes' , description: "Broccoli Rabe And Italian Sausage" },
+  { id: '#45', name: '#45', price: 15, category: 'Regular Heroes' , description: "Sicilian Salami, Swiss Cheese And Deli Mustard" },
+  { id: '#46', name: '#46', price: 20, category: 'Regular Heroes' , description: "Sopressata (Hot Or Sweet) Ham, Provolone, Lettuce, Tomatoes, Oil And Vinegar" },
+  { id: '#47', name: '#47', price: 27, category: 'Regular Heroes' , description: "Bresaola, Arugula, Olive Oil, Shaved Reggiano, Pepper And Oregano" },
+  { id: '#48', name: '#48', price: 19, category: 'Regular Heroes' , description: "Sicilian Salami, Genoa Salami, And Lioni Fresh Mozzarella" },
+  { id: '#49', name: '#49', price: 16, category: 'Regular Heroes' , description: "Italian Sausage And Peppers" },
+  { id: '#50', name: '#50', price: 18, category: 'Regular Heroes' , description: "Hot Turkey, Lioni Fresh Mozzarella, And Gravy" },
+  { id: '#51', name: '#51', price: 14, category: 'Regular Heroes' , description: "Lioni Fresh Mozzarella, Arugula, And Roasted Peppers" },
+  { id: '#52', name: '#52', price: 18, category: 'Regular Heroes' , description: "Roast Beef, Lioni Fresh Mozzarella, And Brown Gravy" },
+  { id: '#53', name: '#53', price: 16, category: 'Regular Heroes' , description: "Eggplant Parmigiana" },
+  { id: '#54', name: '#54', price: 20, category: 'Regular Heroes' , description: "Chicken Cutlet, Melted Lioni Fresh Mozzarella, Crispy Bacon, Bbq Sauce" },
+  { id: '#55', name: '#55', price: 21, category: 'Regular Heroes' , description: "Ham, Salami, Provolone, Shaved Reggiano, Olive Oil Salt & Pepper" },
+  { id: '#56', name: '#56', price: 16, category: 'Regular Heroes' , description: "Salami, Provolone, Olive Oil, Lettuce & Tomato" },
+  { id: '#57', name: '#57', price: 20, category: 'Regular Heroes' , description: "Honey Turkey, Ham Cappy, Lioni Fresh Mozzarella, Tomato, Olive Oil, Salt, Pepper & Oregano" },
+  { id: '#58', name: '#58', price: 16, category: 'Regular Heroes' , description: "(You’Ll Go Out Of Your Head For This One) Mortadella With Pistachio, Fresh Ricotta, Salt & Pepper" },
+  { id: '#59', name: '#59', price: 23, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Mortadella, Lioni Smoked Mozzarella, Lioni Fresh Mozzarella, Olive Oil, Salt, Pepper, Oregano" },
+  { id: '#60', name: '#60', price: 18, category: 'Regular Heroes' , description: "Fried Eggplant, Lioni Fresh Mozzarella, & Mushroom Stuffing" },
+  { id: '#61', name: '#61', price: 20, category: 'Regular Heroes' , description: "Sicilian Salami, Ham Cappy, Lioni Fresh Mozzarella, Olive Oil, Salt, Pepper, & Oregano" },
+  { id: '#62', name: '#62', price: 22, category: 'Regular Heroes' , description: "Chicken Cutlet, Prosciutto Di Parma, Lioni Fresh Mozzarella, And Basil Mix" },
+  { id: '#63', name: '#63', price: 21, category: 'Regular Heroes' , description: "Ham, Sopressata ,White American, Honey Mustard, Lettuce, Tomato, Gardenia Salad" },
+  { id: '#64', name: '#64', price: 19, category: 'Regular Heroes' , description: "Sopressata, Roast Beef, White American & Balsamic Vinegar" },
+  { id: '#65', name: '#65', price: 20, category: 'Regular Heroes' , description: "Grilled Chicken, Broccoli Rabe, Lioni Fresh Mozzarella, Olive Oil, Salt & Pepper" },
+  { id: '#66', name: '#66', price: 20, category: 'Regular Heroes' , description: "Chicken Cutlet, Broccoli Rabe, Lioni Fresh Mozzarella, Olive Oil, Salt & Pepper" },
+  { id: '#67', name: '#67', price: 16, category: 'Regular Heroes' , description: "Roast Beef, White American Cheese, Lettuce, Tomato & Mayo" },
+  { id: '#68', name: '#68', price: 19, category: 'Regular Heroes' , description: "Turkey, Roast Beef, Jalapeño Cheese And Hot Sauce" },
+  { id: '#69', name: '#69', price: 25, category: 'Regular Heroes' , description: "Roast Beef, Sopressata, Lioni Fresh Mozzarella, Italian Sausage, & Stuffed Mushroom" },
+  { id: '#70', name: '#70', price: 18, category: 'Regular Heroes' , description: "Chicken Cutlet, Provolone, Balsamic Vinegar, Roasted Peppers, Salt & Pepper" },
+  { id: '#71', name: '#71', price: 20, category: 'Regular Heroes' , description: "Chicken Cutlet, Lioni Fresh Mozzarella, Roasted Peppers, Balsamic Vinegar" },
+  { id: '#72', name: '#72', price: 16, category: 'Regular Heroes' , description: "Ham Cappy, Lioni Fresh Mozzarella, Lettuce , Tomato, Olive Oil, Salt & Pepper" },
+  { id: '#73', name: '#73', price: 18, category: 'Regular Heroes' , description: "Hot Sopressata, Jalapeno Cheese, Hot Stuffed Pepper, And A Dash Of Hot Sauce" },
+  { id: '#74', name: '#74', price: 16, category: 'Regular Heroes' , description: "Italian Sausage- Sweet Or Hot And Melted White American Cheese" },
+  { id: '#75', name: '#75', price: 18, category: 'Regular Heroes' , description: "Oven Gold Turkey, Fried Eggplant And Yellow American Cheese" },
+  { id: '#76', name: '#76', price: 21, category: 'Regular Heroes' , description: "Roast Beef, Sopressata, White American Cheese And Gardenia Salad" },
+  { id: '#77', name: '#77', price: 16, category: 'Regular Heroes' , description: "Honey Turkey, Munster Cheese And Bbq Sauce" },
+  { id: '#78', name: '#78', price: 20, category: 'Regular Heroes' , description: "Grilled Chicken, Lioni Fresh Mozzarella, Fried Eggplant & Honey Mustard" },
+  { id: '#79', name: '#79', price: 15, category: 'Regular Heroes' , description: "Fried Meat Balls, Lettuce, Vinegar, Salt & Pepper" },
+  { id: '#80', name: '#80', price: 22, category: 'Regular Heroes' , description: "Steak (Thursdays Only ) With Leoni Fresh Mozzarella, Peppers & Onions" },
+  { id: '#81', name: '#81', price: 25, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Pepper Ham, Salami, Swiss Cheese, Olive Oil & Oregano" },
+  { id: '#82', name: '#82', price: 18, category: 'Regular Heroes' , description: "Pepperoni, Provolone Cheese, Mustard And Hot Or Sweet Stuffed Peppers" },
+  { id: '#83', name: '#83', price: 15, category: 'Regular Heroes' , description: "Turkey, Shredded Lettuce, Tomato, Red Onion, Olive Oil, Vinegar, Salt & Pepper" },
+  { id: '#84', name: '#84', price: 16, category: 'Regular Heroes' , description: "Roastpork, Muenster Cheese, Lettuce, Tomato, Salt & Pepper" },
+ { id: '#85', name: '#85', price: 20, category: 'Regular Heroes' , description: "Meatballs, Fresh Ricotta, Grated Cheese, & Basil Mix" },
+  { id: '#86', name: '#86', price: 16, category: 'Regular Heroes' , description: "Mortadella, Provolone, Lettuce, Tomato, Olive Oil, Vinegar, Salt & Pepper" },
+  { id: '#87', name: '#87', price: 20, category: 'Regular Heroes' , description: "Shrimp Parmigiana (Fridays Only )" },
+  { id: '#88', name: '#88', price: 18, category: 'Regular Heroes' , description: "Fried Eggplant, Fresh Ricotta, Salt, Pepper, Basil & Sun-Dried Tomatoes" },
+  { id: '#89', name: '#89', price: 18, category: 'Regular Heroes' , description: "Salami, Provolone, And Roasted Peppers" },
+  { id: '#90', name: '#90', price: 20, category: 'Regular Heroes' , description: "Roast Beef, Stuffed Mushrooms, Lioni Fresh Mozzarella, Gravy, Salt & Pepper" },
+  { id: '#91', name: '#91', price: 18, category: 'Regular Heroes' , description: "Sweet Italian Sausage, Fresh Ricotta, Tomato Sauce & Romano Cheese" },
+  { id: '#92', name: '#92', price: 18, category: 'Regular Heroes' , description: "Sopressata, White American Cheese And Mushroom Stuffing" },
+  { id: '#93', name: '#93', price: 18, category: 'Regular Heroes' , description: "Bologna, Pepperoni, Yellow American Cheese & Mustard" },
+  { id: '#94', name: '#94', price: 25, category: 'Regular Heroes' , description: "Ham, Eggplant, Sopressata, White American, Lioni Fresh Mozzarella" },
+  { id: '#95', name: '#95', price: 23, category: 'Regular Heroes' , description: "Chicken Cutlet, Hot Sopressata, Provolone, Hot Stuffed Peppers" },
+  { id: '#96', name: '#96', price: 20, category: 'Regular Heroes' , description: "Chicken Cutlet, Sausage, Melted White American, With Brown Gravy" },
+  { id: '#97', name: '#97', price: 19, category: 'Regular Heroes' , description: "Roast Beef, Ham, White American, Deli Mustard, And Honey Mustard" },
+  { id: '#98', name: '#98', price: 25, category: 'Regular Heroes' , description: "Ham, Mortadella, Bologna, Lioni Fresh Mozzarella And Lioni’S Basil Mix" },
+  { id: '#99', name: '#99', price: 21, category: 'Regular Heroes' , description: "Milk Fed Veal Cutlet, Lioni Fresh Mozzarella, Topped With Bruschetta" },
+  { id: '#100', name: '#100', price: 18, category: 'Regular Heroes' , description: "Grilled Chicken, Melted White American, Topped With Mushroom Mix" },
+  { id: '#101', name: '#101', price: 20, category: 'Regular Heroes' , description: "Sausage, Roast Pork, Lioni Fresh Mozzarella, And Basil Mix" },
+  { id: '#102', name: '#102', price: 25, category: 'Regular Heroes' , description: "Sicilian Salami, Genoa Salami, Ham, Lioni Fresh Mozzarella, & Hot Or Sweet Stuffed Peppers" },
+  { id: '#103', name: '#103', price: 23, category: 'Regular Heroes' , description: "Salami, Provolone, Mortadella, Sweet Capicola, Lettuce, Tomato, Oil And Vinegar" },
+  { id: '#375', name: '#375', price: 19, category: 'Regular Heroes' , description: "Chicken Cutlet, Roast Beef, White American, Honey Mustard" },
+  { id: '#105', name: '#105', price: 18, category: 'Regular Heroes' , description: "Sopressata, Provolone, Balsamic Vinegar & Basil Mix" },
+  { id: '#106', name: '#106', price: 27, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Basil Mix, Stuffed Peppers And Reggiano Cheese" },
+  { id: '#107', name: '#107', price: 25, category: 'Regular Heroes' , description: "Roast Beef, Sopressata, Lioni Fresh Mozzarella, Muenster Cheese, And Bruschetta" },
+  { id: '#108', name: '#108', price: 28, category: 'Regular Heroes' , description: "Chicken Cutlet, Ham, Balsamic Vinegar, Stuffed Peppers, Basil Mix, Lioni Fresh Mozzarella And White American" },
+  { id: '#109', name: '#109', price: 21, category: 'Regular Heroes' , description: "Mortadella, Chicken Cutlet, Ham, Horseradish And Mayo" },
+  { id: '#110', name: '#110', price: 23, category: 'Regular Heroes' , description: "Capicola, Prosciutto Di Parma, Olive Loaf, Lioni Fresh Mozzarella, Bruschetta, And A Drizzle Of Balsamic Vinegar" },
+  { id: '#111', name: '#111', price: 25, category: 'Regular Heroes' , description: "Eggplant, Roast Beef, Mozzarella, White American, Bruschetta, Sun-Dried Tomato, Stuffed Peppers, Balsamic Vinegar" },
+  { id: '#112', name: '#112', price: 20, category: 'Regular Heroes' , description: "Ham, Roast Beef, Lioni Fresh Mozzarella And Honey Mustard" },
+  { id: '#113', name: '#113', price: 24, category: 'Regular Heroes' , description: "Ham, Roast Beef, White American Lioni Fresh Mozzarella, Bread Butter Pickles , Mayo And Horseradish Mix" },
+  { id: '#114', name: '#114', price: 22, category: 'Regular Heroes' , description: "Chicken Cutlet, Fried Peppers, Stuffed Peppers, Basil Mix And A Drizzle Of Balsamic Vinegar" },
+  { id: '#115', name: '#115', price: 29, category: 'Regular Heroes' , description: "Prosciutto, Sweet Capicola, Ceasar Dressing, Stuffed Peppers, Marinated Sun-Dried Tomatoes, Romano Cheese, Mozzarella" },
+  { id: '#116', name: '#116', price: 25, category: 'Regular Heroes' , description: "Grilled Chicken, Prosciutto Di Parma, Sun-Dried Tomatoes, Lioni Fresh Mozzarella And Bruschetta" },
+  { id: '#117', name: '#117', price: 22, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, And Lioni’S Basil Mix" },
+  { id: '#118', name: '#118', price: 25, category: 'Regular Heroes' , description: "Chicken Cutlet, Roast Beef, Mortadella, Lioni Fresh Mozzarella And Basil Mix" },
+  { id: '#119', name: '#119', price: 29, category: 'Regular Heroes' , description: "Chicken Cutlet, Salami, Ham, Olive Oil, Basil Mix, Lioni Fresh Mozzarella, Sun-Dried Tomatoes, Balsamic Vinegar" },
+  { id: '#120', name: '#120', price: 20, category: 'Regular Heroes' , description: "Fried Eggplant, Ham Capicola, Basil Mix, And Melted White American" },
+  { id: '#121', name: '#121', price: 22, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella And Bruschetta" },
+  { id: '#122', name: '#122', price: 24, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Fresh Ricotta, Lioni Fresh Mozzarella, And Sautéed Peppers" },
+  { id: '#123', name: '#123', price: 21, category: 'Regular Heroes' , description: "Chicken Cutlet, White American, Muffaletta And Sweet Stuffed Peppers" },
+  { id: '#124', name: '#124', price: 23, category: 'Regular Heroes' , description: "Fried Eggplant, Prosciutto Di Parma, Basil Mix, Lioni Fresh Mozzarella, Romano And Balsamic Vinegar" },
+  { id: '#125', name: '#125', price: 28, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Cappicola, Lioni Fresh Mozzarella, Basil Mix, Balsamic Vinegar" },
+  { id: '#126', name: '#126', price: 19, category: 'Regular Heroes' , description: "Fried Eggplant, Salami, Olive Oil And Lioni Fresh Mozzarella" },
+  { id: '#127', name: '#127', price: 21, category: 'Regular Heroes' , description: "Fried Eggplant, Mortadella, Lioni Smoked Mozzarella, American White, Olive Oil, Salt, Pepper, And Oregano" },
+  { id: '#128', name: '#128', price: 25, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Lioni Fresh Mozzarella, Basil Mix, Balsamic Vinegar And Extra Virgin Olive Oil And Roasted Peppers" },
+  { id: '#129', name: '#129', price: 25, category: 'Regular Heroes' , description: "Veal, Meatball, And Eggplant Parmesan Hero (All Three) (Melted Mozzarella With Sauce)" },
+  { id: '#130', name: '#130', price: 20, category: 'Regular Heroes' , description: "Home Made Roastbeef, Onions, Prosciutto Di Parma, And White American Cheese Melted To Perfection" },
+  { id: '#131', name: '#131', price: 21, category: 'Regular Heroes' , description: "Chicken Cutlet, Fried Eggplant, 10 Cheese Garlic Mix, And Basil Mix" },
+  { id: '#132', name: '#132', price: 27, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Sopressata, Banana Peppers, Drizzle Of Balsamic Vinegar, Lioni Fresh Mozzarella And Basil Mix" },
+  { id: '#133', name: '#133', price: 26, category: 'Regular Heroes' , description: "Cappy Ham, Capicola, Salami, Lioni Fresh Mozzarella, Lettuce, Tomato, Mayo, Olive Oil, Salt, Pepper & Onion And Stuffed Peppers" },
+  { id: '#134', name: '#134', price: 18, category: 'Regular Heroes' , description: "Chicken Cutlet, Lioni Fresh Mozzarella, Tomatoes, Red Onions, Garlic, Oregano, Salt & Pepper" },
+  { id: '#135', name: '#135', price: 21, category: 'Regular Heroes' , description: "Veal Cutlet, Hot Or Sweet Stuffed Peppers, Lioni Fresh Mozzarella" },
+  { id: '#136', name: '#136', price: 23, category: 'Regular Heroes' , description: "Ham, Grilled Chicken, Ceasar Dressing, Lioni Fresh Mozzarella, Melted American Cheese" },
+  { id: '#137', name: '#137', price: 25, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Roast Beef, Lioni Fresh Mozzarella, Sun-Dried Tomatoes And Balsamic Vinegar" },
+  { id: '#138', name: '#138', price: 26, category: 'Regular Heroes' , description: "Veal Cutlet, Prosciutto Di Parma, Lioni Fresh Mozzarella, Basil Mix, Sweet Or Hot Peppers, Oil" },
+  { id: '#139', name: '#139', price: 25, category: 'Regular Heroes' , description: "Prosciutto Di Parma, Capicola, Sopressata, Lioni Fresh Mozzarella, Provlone, Brushcetta, And Balsamic Vinegar" },
+  { id: '#1A', name: '#1A', price: 19, category: 'Smoked Mozzarella Heroes' , description: "Mortadella, Lioni Smoked Mozzarella And Basil Mix" },
+  { id: '#2A', name: '#2A', price: 19, category: 'Smoked Mozzarella Heroes' , description: "Hot Capitol, Lioni Smoked Mozzarella, Basil Mix, And Olive Oil" },
+  { id: '#3A', name: '#3A', price: 22, category: 'Smoked Mozzarella Heroes' , description: "Prosciutto Di Parma, Lioni Smoked Mozzarella, Roasted Pepper And Oregano" },
+  { id: '#4A', name: '#4A', price: 16, category: 'Smoked Mozzarella Heroes' , description: "Roasted Turkey, Lioni Smoked Mozzarella, Olive Oil, Salt, Pepper And Oregano" },
+  { id: '#5A', name: '#5A', price: 20, category: 'Smoked Mozzarella Heroes' , description: "Ham, Salami, Lioni Smoked Mozzarella, Olive Oil, Oregano, And Pepper" },
+  { id: '#6A', name: '#6A', price: 19, category: 'Smoked Mozzarella Heroes' , description: "Pepper Turkey, Lioni Smoked Mozzarella, Bruschetta, And Olive Oil" },
+  { id: '#7A', name: '#7A', price: 20, category: 'Smoked Mozzarella Heroes' , description: "Chicken Cutlet, Lioni Smoked Mozzarella, Pesto Sauce, Oregano, Salt And Pepper" },
+  { id: '#8A', name: '#8A', price: 22, category: 'Smoked Mozzarella Heroes' , description: "Grilled Chicken, Lioni Smoked Mozzarella, Lioni Fresh Mozzarella, With American Cheese ( Served Warm)" },
+  { id: '#9A', name: '#9A', price: 21, category: 'Smoked Mozzarella Heroes' , description: "Cappy Ham, Sweet Sopressata, Lioni Smoked Mozzarella, Lettuce, Tomato, Olive Oil, Salt, Pepper And Oregano" },
+  { id: '#10A', name: '#10A', price: 16, category: 'Smoked Mozzarella Heroes' , description: "Lioni Smoked Mozzarella, Lioni Fresh Mozzarella, Arugula, Olive Oil, Lettuce, Salt Pepper And Oregano" },
+  { id: '#11A', name: '#11A', price: 18, category: 'Smoked Mozzarella Heroes' , description: "Lioni Smoked Mozaarella, Fried Eggplant, Roasted Peppers, Olive Oil, Balsamic Vinegar, Oregano, Salt And Pepper" },
+  { id: 'P1', name: 'P1', price: 24, category: '"P" Heroes', description: "Ham, Salami, Pepperoni, Soppressata, Fresh Mozzarella, Roasted Peppers" },
+  { id: 'P2', name: 'P2', price: 24, category: '"P" Heroes', description: "Ham, Turkey, Roast Beef, Virginia Ham, Yellow American Cheese, Swiss Cheese, Lettuce, Tomato" },
+  { id: 'P3', name: 'P3', price: 19, category: '"P" Heroes', description: "Sausage & Peppers Topped With Melted White American Cheese & Tomato Sauce" },
+  { id: 'P4', name: 'P4', price: 20, category: '"P" Heroes', description: "Mortadella, Fresh Ricotta, Homemade Basil Mix, Grated Romano Cheese, Salt & Pepper, Olive Oil, All Toasted" },
+  { id: 'P5', name: 'P5', price: 24, category: '"P" Heroes', description: "Roast Pork, Genoa Salami, Virginia Ham, Swiss Cheese, Lioni Smoked Mozzarella, Basil Mix, Deli Mustard, Sliced Pickles" },
+  { id: 'P6', name: 'P6', price: 24, category: '"P" Heroes', description: "Prosciutto Parma, Lioni Fresh Mozzarella, Roasted Peppers, Extra Virgin Olive Oil, Balsamic Glaze" },
 
   // Appetizers
   { id: 'A1', name: '5 for $6', price: 6, category: 'Appetizers' },
@@ -193,7 +194,7 @@ const items = [
 
   { id: "K1", name: "Chicken Fingers", price: 5.0, category: "Kid's Menu" },
   { id: "K2", name: "Pasta", price: 5.0, category: "Kid's Menu" },
-  { id: "K3", name: "Sandwich", price: 5.0, category: "Kid's Menu" },,
+  { id: "K3", name: "Sandwich", price: 5.0, category: "Kid's Menu" },
 
   { id: 'bread1', name: 'Italian Bread', price: 1.5, category: 'Bread Items' },
   { id: 'bread2', name: 'Hero Bread', price: 1.5, category: 'Bread Items' },
@@ -203,7 +204,7 @@ const items = [
   { id: 'bread6', name: 'Olive Bread', price: 6.0, category: 'Bread Items' },
   { id: 'bread7', name: 'Prosciutto Bread', price: 10.0, category: 'Bread Items' },
   { id: 'bread8', name: 'Focaccia - Small', price: 3.75, category: 'Bread Items' },
-  { id: 'bread9', name: 'Focaccia - Large', price: 5.75, category: 'Bread Items' },,
+  { id: 'bread9', name: 'Focaccia - Large', price: 5.75, category: 'Bread Items' },
 
   { id: 'dessert1', name: 'Sorbets', price: 7.5, category: 'Desserts' },
   { id: 'dessert2', name: 'Dessert Cups', price: 4.79, category: 'Desserts' },
@@ -219,7 +220,7 @@ const items = [
   { id: 'dessert12', name: 'Linzer Tart Cookies', price: 8.0, category: 'Desserts' },
   { id: 'dessert13', name: "Grandmas Cookies", price: 5.25, category: 'Desserts' },
   { id: 'dessert14', name: 'Cannoli Bar', price: 2.0, category: 'Desserts' },
-  { id: 'dessert15', name: 'Large Black & White Cookie', price: 3.0, category: 'Desserts' },,
+  { id: 'dessert15', name: 'Large Black & White Cookie', price: 3.0, category: 'Desserts' },
 
   { id: 'grocery1', name: 'Fresh Mozzarella', price: 6.5, category: 'Grocery Items' },
   { id: 'grocery2', name: '3 for $17 Mozzarella', price: 17.0, category: 'Grocery Items' },
@@ -240,6 +241,166 @@ const items = [
   { id: 'milk1', name: '1/4 Milk', price: 2.19, category: 'Milk' },
   { id: 'milk2', name: '1/2 Gallon Milk', price: 3.69, category: 'Milk' },
   { id: 'milk3', name: 'Gallon Milk', price: 5.49, category: 'Milk' },
+
+  { id: "PH_1", name: "American", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_2", name: "Italian", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_3", name: "Classic", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_4", name: "Basic", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_5", name: "Grilled Classic", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_6", name: "Eggplant Classic", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_7", name: "Grilled Veggie Deluxe", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_8", name: "Charlie Tuna", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_9", name: "15th Ave Special", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_10", name: "Extravaganza", pricePerFoot: 75, category: "Party Heroes" },
+  { id: "PH_11", name: "#1", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_12", name: "#2", pricePerFoot: 39, category: "Party Heroes" },
+  { id: "PH_13", name: "#3", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_14", name: "#4", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_15", name: "#5", pricePerFoot: 28, category: "Party Heroes" },
+  { id: "PH_16", name: "#6", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_17", name: "#7", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_18", name: "#8", pricePerFoot: 28, category: "Party Heroes" },
+  { id: "PH_19", name: "#9", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_20", name: "#10", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_21", name: "#11", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_22", name: "#12", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_23", name: "#13", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_24", name: "#14", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_25", name: "#15", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_26", name: "#16", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_27", name: "#17", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_28", name: "#18", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_29", name: "#19", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_30", name: "#20", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_31", name: "#21", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_32", name: "#23", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_33", name: "#24", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_34", name: "#25", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_35", name: "#26", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_36", name: "#27", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_37", name: "#28", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_38", name: "#29 (Pan)", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_39", name: "#30", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_40", name: "#31", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_41", name: "#32", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_42", name: "#33", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_43", name: "#34", pricePerFoot: 28, category: "Party Heroes" },
+  { id: "PH_44", name: "#35 (Pan)", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_45", name: "#37", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_46", name: "#38", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_47", name: "#39", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_48", name: "#40", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_49", name: "#41 (Pan)", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_50", name: "#42", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_51", name: "#43", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_52", name: "#44", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_53", name: "#45", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_54", name: "#46", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_55", name: "#47", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_56", name: "#48", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_57", name: "#49 (Pan)", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_58", name: "#50 (Pan)", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_59", name: "#51", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_60", name: "#52 (Pan)", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_61", name: "#53 (Pan)", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_62", name: "#54 (Maestro)", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_63", name: "#55", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_64", name: "#56", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_65", name: "#57", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_66", name: "#58", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_67", name: "#59", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_68", name: "#60", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_69", name: "#61", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_70", name: "#62", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_71", name: "#63", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_72", name: "#64", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_73", name: "#65", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_74", name: "#66", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_75", name: "#67", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_76", name: "#68", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_77", name: "#69", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_78", name: "#70", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_79", name: "#71", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_80", name: "#72", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_81", name: "#73", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_82", name: "#74", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_83", name: "#75", pricePerFoot: 28, category: "Party Heroes" },
+  { id: "PH_84", name: "#76", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_85", name: "#77", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_86", name: "#78", pricePerFoot: 38, category: "Party Heroes" },
+  { id: "PH_87", name: "#79", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_88", name: "#80 (Pan)", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_89", name: "#81", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_90", name: "#82", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_91", name: "#83", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_92", name: "#84", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_93", name: "#85", pricePerFoot: 32, category: "Party Heroes" },
+  { id: "PH_94", name: "#86", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_95", name: "#87 (Pan)", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_96", name: "#88", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_97", name: "#89", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_98", name: "#90 (Pan)", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_99", name: "#91", pricePerFoot: 28, category: "Party Heroes" },
+  { id: "PH_100", name: "#92", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_101", name: "#93", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_102", name: "#94", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_103", name: "#95", pricePerFoot: 39, category: "Party Heroes" },
+  { id: "PH_104", name: "#96", pricePerFoot: 39, category: "Party Heroes" },
+  { id: "PH_105", name: "#97", pricePerFoot: 25, category: "Party Heroes" },
+  { id: "PH_106", name: "#98", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_107", name: "#99", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_108", name: "#100", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_109", name: "#101", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_110", name: "#102", pricePerFoot: 33, category: "Party Heroes" },
+  { id: "PH_111", name: "#103", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_112", name: "#104 (375)", pricePerFoot: 38, category: "Party Heroes" },
+  { id: "PH_113", name: "#105", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_114", name: "#106", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_115", name: "#107", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_116", name: "#108", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_117", name: "#109", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_118", name: "#110", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_119", name: "#111", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_120", name: "#112", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_121", name: "#113", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_122", name: "#114", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_123", name: "#115", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_124", name: "#116", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_125", name: "#117", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_126", name: "#118", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_127", name: "#119", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_128", name: "#120", pricePerFoot: 33, category: "Party Heroes" },
+  { id: "PH_129", name: "#121", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_130", name: "#122", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_131", name: "#123", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_132", name: "#124", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_133", name: "#125", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_134", name: "#126", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_135", name: "#127", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_136", name: "#128", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_137", name: "#129 (Pan)", pricePerFoot: 60, category: "Party Heroes" },
+  { id: "PH_138", name: "#130", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_139", name: "#131", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_140", name: "#132", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_141", name: "#133", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_142", name: "#134", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_143", name: "#135", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_144", name: "#136", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_145", name: "#137", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_146", name: "#138", pricePerFoot: 50, category: "Party Heroes" },
+  { id: "PH_147", name: "#139", pricePerFoot: 45, category: "Party Heroes" },
+  { id: "PH_148", name: "#1A", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_149", name: "#2A", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_150", name: "#3A", pricePerFoot: 40, category: "Party Heroes" },
+  { id: "PH_151", name: "#4A", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_152", name: "#5A", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_153", name: "#6A", pricePerFoot: 29, category: "Party Heroes" },
+  { id: "PH_154", name: "#7A", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_155", name: "#8A", pricePerFoot: 35, category: "Party Heroes" },
+  { id: "PH_156", name: "#9A", pricePerFoot: 30, category: "Party Heroes" },
+  { id: "PH_157", name: "#10A", pricePerFoot: 26, category: "Party Heroes" },
+  { id: "PH_158", name: "#11A", pricePerFoot: 30, category: "Party Heroes" },
+  
 ];
 
 const addonCategories = [
@@ -319,35 +480,20 @@ const specialCustomAddons = [
   { name: 'Just Proscuitto or Veal (No Cheese)', price: 16 },
 ];
 
-const categories = [
-  'All',
-  'Regular Heroes',
-  'Smoked Mozzarella Heroes',
-  '"P" Heroes',
-  'Chips',
-  'Bread Items',
-  'Appetizers',
-  "Kid's Menu",
-  'Beverages',
-  'Desserts',
-  'Grocery Items',
-  'Milk',
-  'Party Heroes - Catering',
-  'Hot Food - Catering',
-  'Platters - Catering',
-  'Salads - Catering',
-  'Breakfast - Catering'
-];
+const categories = ['All', 'Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes', 'Chips', 'Bread Items', 'Appetizers', "Kid's Menu", 'Beverages', 'Desserts', 'Grocery Items', 'Milk', 'Party Heroes'];
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [partyHeroFeet, setPartyHeroFeet] = useState(2);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedItem, setSelectedItem] = useState(null);
   const [addonQuantities, setAddonQuantities] = useState({});
   const [editIndex, setEditIndex] = useState(null);
   const [customTip, setCustomTip] = useState(0);
+  const [deliveryFee, setDeliveryFee] = useState(0);
   const [manualSubtotal, setManualSubtotal] = useState('');
+  const [taxExempt, setTaxExempt] = useState(false);
   const [expandedAddonCategories, setExpandedAddonCategories] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [addonSearch, setAddonSearch] = useState("");
@@ -381,10 +527,12 @@ function App() {
     return [...customOptions, ...addonCategories];
   };
 
+  // Search by displayed number, item name, or ingredient description.
+  const normalizedSearch = searchTerm.trim().toLowerCase();
   const filteredItems = items.filter(
     (item) => (activeCategory === 'All' || item.category === activeCategory) &&
-      (item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-       item.id.toLowerCase().includes(searchTerm.toLowerCase()))
+      (!normalizedSearch || [item.name, item.id, item.description]
+        .some(value => String(value ?? '').toLowerCase().includes(normalizedSearch)))
   );
 
   const getItemCountInCategory = (cat) => {
@@ -400,6 +548,12 @@ function App() {
 
   
   function openCustomization(item, index = null) {
+    if (item.category === "Party Heroes") {
+      setSelectedItem(item);
+      setEditIndex(index);
+      setPartyHeroFeet(item.feet || 2);
+      return;
+    }
     if (!isHeroItem(item)) {
       const itemWithAddons = { ...item, addons: [], total: item.price };
       setCart((prev) => [...prev, itemWithAddons]);
@@ -413,6 +567,15 @@ function App() {
 
 
   function saveToCart() {
+    if (selectedItem.category === "Party Heroes") {
+      const feet = partyHeroFeet;
+      const price = selectedItem.pricePerFoot * feet + 3;
+      const partyItem = { ...selectedItem, feet, price, total: price, addons: [], name: `${selectedItem.name} (${feet} ft)` };
+      setCart(prev => editIndex === null ? [...prev, partyItem] : prev.map((entry, i) => i === editIndex ? partyItem : entry));
+      setSelectedItem(null);
+      setEditIndex(null);
+      return;
+    }
     const addons = Object.entries(addonQuantities).map(([name, qty]) => {
       const price = addonCategories.flatMap(c => c.options).find(opt => opt.name === name)?.price ??
                   specialCustomAddons.find(opt => opt.name === name)?.price ?? 0;
@@ -453,15 +616,18 @@ function App() {
   const rawSubtotal = cart.reduce((sum, item) => sum + item.total, 0);
   const subtotal = manualSubtotal ? parseFloat(manualSubtotal) || 0 : rawSubtotal;
   const tip = Number(customTip);
-  const subtotalWithTip = subtotal + tip;
-  const tax = subtotalWithTip * 0.08875;
-  const subtotalWithTax = subtotalWithTip + tax;
+  const delivery = Math.max(0, Number(deliveryFee) || 0);
+  const subtotalWithTipAndDelivery = subtotal + tip + delivery;
+  const tax = taxExempt ? 0 : subtotalWithTipAndDelivery * 0.08875;
+  const subtotalWithTax = subtotalWithTipAndDelivery + tax;
   const serviceFee = subtotalWithTax * 0.0395;
   
   function clearCart() {
+    setTaxExempt(false);
     setManualSubtotal('');
     setCart([]);
     setCustomTip(0);
+    setDeliveryFee(0);
   }
 
 
@@ -500,7 +666,6 @@ return (
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search items..." style={{ width: '100%', padding: 12, borderRadius: 10, border: '1px solid #ccc', marginBottom: 16, fontSize: '16px' }}
-        style={{ width: '100%', padding: 12, borderRadius: 10, border: '1px solid #ccc', marginBottom: 16 }}
       />
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 16 }}>
@@ -523,10 +688,28 @@ return (
             onClick={() => openCustomization(item)}
           >
             <strong>{item.name}</strong>
-            <div>${item.price.toFixed(2)}</div>
+            <div>{item.category === "Party Heroes" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>
           </div>
         ))}
       </div>
+
+      {selectedItem?.category === 'Party Heroes' && (
+        <div onClick={(e) => { if (e.target === e.currentTarget) setSelectedItem(null); }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
+          <div style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
+            <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
+            <label>Feet (min 2):{' '}
+              <select value={partyHeroFeet} onChange={e => setPartyHeroFeet(Number(e.target.value))} style={{ padding: 8, fontSize: 16, borderRadius: 6 }}>
+                {[2, 3].map(feet => <option key={feet} value={feet}>{feet} ft - ${(selectedItem.pricePerFoot * feet + 3).toFixed(2)}</option>)}
+              </select>
+            </label>
+            <p style={{ fontSize: 13, color: '#555' }}>Includes $3 cutting board charge per hero.</p>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button onClick={saveToCart} style={{ background: '#007AFF', color: 'white', border: 0, borderRadius: 7, padding: '9px 14px' }}>Add to Cart</button>
+              <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '9px 14px' }}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {selectedItem && isHeroItem(selectedItem) && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(4px)', backgroundColor: 'rgba(0,0,0,0.4)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => {
@@ -538,7 +721,6 @@ return (
     }}>
           <div onClick={(e) => e.stopPropagation()} style={{ background: 'white', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <h2 style={{ margin: 0 }}>Customize {selectedItem.name}</h2>
               <div>
                 <button onClick={() => { setSelectedItem(null);
@@ -547,10 +729,9 @@ return (
                 <button onClick={saveToCart} style={{ padding: '8px 12px', borderRadius: 8, background: '#007AFF', color: '#fff', border: 'none' }}>Add to Cart</button>
               </div>
             </div>
-              <div>
-              </div>
-            </div>
-            
+            {selectedItem.description && (
+              <p style={{ fontSize: 12, color: '#666', lineHeight: 1.5, margin: '-6px 0 14px' }}>{selectedItem.description}</p>
+            )}
             
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 20 }}>
             </div>
@@ -561,7 +742,6 @@ return (
               value={addonSearch}
               onChange={(e) => setAddonSearch(e.target.value)}
               placeholder="Search addons..." style={{ width: '96%', padding: 6, fontSize: '16px', marginBottom: 10, borderRadius: 6, border: '1px solid #ccc' }}
-              style={{ width: '96%', padding: 6, fontSize: 14, marginBottom: 10, borderRadius: 6, border: '1px solid #ccc' }}
             />
 
             {getAvailableAddons(selectedItem).map((cat, idx) => (
@@ -601,7 +781,7 @@ return (
                 <div>
                   <strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''} - ${(item.price * item.quantity).toFixed(2)}
 {
-  item.category?.includes('Hero') && (() => {
+  (item.category?.includes('Hero') && item.category !== 'Party Heroes') && (() => {
     const matchingCartItem = cart.find(
       cartItem => cartItem.name === item.name && JSON.stringify(cartItem.addons) === JSON.stringify(item.addons)
     );
@@ -649,7 +829,7 @@ return (
   })()
 }
 
-                {item.category?.includes('Hero') && (
+                {(item.category?.includes('Hero') && item.category !== 'Party Heroes') && (
                   <div style={{ marginTop: 8 }}>
                     <label style={{ fontSize: 14 }}>
                       Manual Price: $
@@ -731,10 +911,30 @@ return (
                   style={{ marginLeft: 8, width: 80, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '16px' }}
                 />
               </label>
+              <label style={{ display: 'block', marginBottom: 8 }}>
+                Delivery Fee: $
+                <input
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  value={deliveryFee}
+                  onChange={(e) => setDeliveryFee(e.target.value)}
+                  style={{ marginLeft: 8, width: 80, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '16px' }}
+                />
+              </label>
+              <button
+                type="button"
+                onClick={() => setTaxExempt((previous) => !previous)}
+                aria-pressed={taxExempt}
+                style={{ padding: '12px 16px', marginBottom: 12, width: '100%', borderRadius: 8, border: taxExempt ? '2px solid #18794e' : '1px solid #aaa', background: taxExempt ? '#d8f5e4' : '#f2f2f2', color: taxExempt ? '#145c3b' : '#222', fontWeight: 700, cursor: 'pointer', fontSize: 16 }}
+              >
+                {taxExempt ? '✓ Tax Exempt ON — Remove Exemption' : 'Tax Exempt — Apply Exemption'}
+              </button>
               <p>Subtotal: ${subtotal.toFixed(2)}</p>
               <p>Tip: ${tip.toFixed(2)}</p>
-              <p>Subtotal with Tip: ${subtotalWithTip.toFixed(2)}</p>
-              <p>Sales Tax (8.875%): ${tax.toFixed(2)}</p>
+              <p>Delivery Fee: ${delivery.toFixed(2)}</p>
+              <p>Subtotal with Tip &amp; Delivery Fee: ${subtotalWithTipAndDelivery.toFixed(2)}</p>
+              <p>Sales Tax ({taxExempt ? 'Exempt' : '8.875%'}): ${tax.toFixed(2)}</p>
               <p>Subtotal with Tax: ${subtotalWithTax.toFixed(2)}</p>
               <p>Service Fee (3.95%): ${serviceFee.toFixed(2)}</p>
               <p><strong>Final Total: ${finalTotal.toFixed(2)}</strong></p>
