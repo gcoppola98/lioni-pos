@@ -661,16 +661,19 @@ function App() {
 
   function groupCartItems(cart) {
     const grouped = [];
-    cart.forEach(item => {
+    cart.forEach((item, cartIndex) => {
       const matchIndex = grouped.findIndex(g =>
         g.name === item.name &&
+        g.price === item.price &&
+        g.manualPrice === item.manualPrice &&
         JSON.stringify(g.addons) === JSON.stringify(item.addons)
       );
       if (matchIndex >= 0) {
         grouped[matchIndex].quantity += 1;
+        grouped[matchIndex].indexes.push(cartIndex);
         grouped[matchIndex].total += item.total;
       } else {
-        grouped.push({ ...item, quantity: 1 });
+        grouped.push({ ...item, quantity: 1, indexes: [cartIndex] });
       }
     });
     return grouped;
@@ -681,11 +684,15 @@ function App() {
 const finalTotal = subtotalWithTax + serviceFee;
 
 return (
-    <div className="lioni-pos-root" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', background: '#f9f9f9', padding: 20, minHeight: '100vh', width: '100%', maxWidth: '100%', boxSizing: 'border-box', overflowX: 'clip' }}>
+    <div className="lioni-pos-root" style={{ fontFamily: '"Montserrat", Arial, sans-serif', background: '#F4F5F0', padding: 20, minHeight: '100vh', width: '100%', maxWidth: '100%', boxSizing: 'border-box', overflowX: 'clip' }}>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+        .lioni-pos-root, .lioni-pos-root button, .lioni-pos-root input, .lioni-pos-root select, .lioni-pos-root textarea { font-family: "Montserrat", Arial, sans-serif; }
         html, body, #root { max-width: 100%; margin: 0; overflow-x: clip; }
         .lioni-pos-root, .lioni-pos-root * { box-sizing: border-box; }
-        .lioni-pos-root { min-width: 0; }
+        .lioni-pos-root { min-width: 0; color: #242424; }
+        .lioni-pos-root button { cursor: pointer; }
+        .lioni-pos-root input:focus-visible, .lioni-pos-root select:focus-visible, .lioni-pos-root button:focus-visible { outline: 2px solid #008C45; outline-offset: 2px; }
         .lioni-pos-root input, .lioni-pos-root select, .lioni-pos-root textarea { max-width: 100%; min-width: 0; }
         .lioni-pos-root .lioni-overlay { padding: 12px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
         .lioni-pos-root .lioni-dialog { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
@@ -697,8 +704,8 @@ return (
         }
       `}</style>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, minWidth: 0, marginBottom: 20 }}>
-        <h1 style={{ fontSize: '1.8rem', minWidth: 0, margin: 0 }}>Lioni POS</h1>
-        <button onClick={() => setShowCart(true)} style={{ position: 'relative', flexShrink: 0, background: '#007AFF', color: '#fff', border: 'none', borderRadius: 20, padding: '6px 12px', fontSize: 14 }}>
+        <h1 style={{ fontSize: '1.8rem', minWidth: 0, margin: 0, color: '#008C45' }}>Lioni POS</h1>
+        <button onClick={() => setShowCart(true)} style={{ position: 'relative', flexShrink: 0, background: '#008C45', color: '#fff', border: 'none', borderRadius: 20, padding: '6px 12px', fontSize: 14 }}>
           🛒 {cart.length} • ${subtotal.toFixed(2)}
         </button>
       </div>
@@ -715,7 +722,7 @@ return (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            style={{ padding: '6px 12px', borderRadius: 8, border: 'none', background: activeCategory === cat ? '#007AFF' : '#eee' }}
+            style={{ padding: '6px 12px', borderRadius: 8, border: 'none', background: activeCategory === cat ? '#008C45' : '#ffffff', color: activeCategory === cat ? '#ffffff' : '#222222', fontWeight: activeCategory === cat ? 700 : 500 }}
           >
             {cat} ({getItemCountInCategory(cat)})
           </button>
@@ -726,7 +733,7 @@ return (
         {filteredItems.map(item => (
           <div
             key={item.id}
-            style={{ padding: 10, borderRadius: 8, background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer' }}
+            style={{ padding: 10, borderRadius: 8, background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer' }}
             onClick={() => openCustomization(item)}
           >
             <strong>{item.name}</strong>
@@ -737,7 +744,7 @@ return (
 
       {selectedItem?.category === 'Party Heroes' && (
         <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) setSelectedItem(null); }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
-          <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
+          <div className="lioni-dialog" style={{ background: '#ffffff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
             <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
             <label>Feet (min 2):{' '}
               <select value={partyHeroFeet} onChange={e => setPartyHeroFeet(Number(e.target.value))} style={{ padding: 8, fontSize: 16, borderRadius: 6 }}>
@@ -746,7 +753,7 @@ return (
             </label>
             <p style={{ fontSize: 13, color: '#555' }}>Includes $3 cutting board charge per hero.</p>
             <div style={{ display: 'flex', gap: 8 }}>
-              <button onClick={saveToCart} style={{ background: '#007AFF', color: 'white', border: 0, borderRadius: 7, padding: '9px 14px' }}>Add to Cart</button>
+              <button onClick={saveToCart} style={{ background: '#008C45', color: 'white', border: 0, borderRadius: 7, padding: '9px 14px' }}>Add to Cart</button>
               <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '9px 14px' }}>Cancel</button>
             </div>
           </div>
@@ -761,14 +768,14 @@ return (
         setExpandedAddonCategories([]);
       }
     }}>
-          <div className="lioni-dialog" onClick={(e) => e.stopPropagation()} style={{ background: 'white', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+          <div className="lioni-dialog" onClick={(e) => e.stopPropagation()} style={{ background: '#ffffff', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <h2 style={{ margin: 0 }}>Customize {selectedItem.name}</h2>
               <div>
                 <button onClick={() => { setSelectedItem(null);
     setAddonSearch('');
-    setExpandedAddonCategories([]); setAddonSearch(''); setExpandedAddonCategories([]); }} style={{ marginRight: 12, padding: '8px 12px', borderRadius: 8, border: '1px solid #ccc', background: '#f2f2f2' }}>Cancel</button>
-                <button onClick={saveToCart} style={{ padding: '8px 12px', borderRadius: 8, background: '#007AFF', color: '#fff', border: 'none' }}>Add to Cart</button>
+    setExpandedAddonCategories([]); setAddonSearch(''); setExpandedAddonCategories([]); }} style={{ marginRight: 12, padding: '8px 12px', borderRadius: 8, border: '1px solid #ccc', background: '#F4F5F0' }}>Cancel</button>
+                <button onClick={saveToCart} style={{ padding: '8px 12px', borderRadius: 8, background: '#008C45', color: '#fff', border: 'none' }}>Add to Cart</button>
               </div>
             </div>
             {selectedItem.description && (
@@ -790,7 +797,7 @@ return (
               <div key={idx} style={{ marginBottom: 14 }}>
                 <div
                   onClick={() => toggleAddonCategory(cat.title)}
-                  style={{ display: 'flex', justifyContent: 'space-between', cursor: 'pointer', background: '#f2f2f7', padding: 10, borderRadius: 10 }}
+                  style={{ display: 'flex', justifyContent: 'space-between', cursor: 'pointer', background: '#F4F5F0', padding: 10, borderRadius: 10 }}
                 >
                   <strong>{cat.title}</strong>
                   <span style={{ fontSize: 18 }}>{(addonSearch || expandedAddonCategories.includes(cat.title)) ? '▾' : '▸'}</span>
@@ -817,59 +824,11 @@ return (
       {/* Cart Modal */}
       {showCart && (
         <div className="lioni-overlay" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => { if (e.target === e.currentTarget) { setShowCart(false); setManualSubtotal(''); } }}>
-          <div className="lioni-dialog" style={{ background: '#fff', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
+          <div className="lioni-dialog" style={{ background: '#ffffff', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
             {groupedCart.map((item, idx) => (
-              <div key={idx} style={{ background: '#f2f2f2', padding: 12, borderRadius: 10, marginBottom: 10 }}>
+              <div key={idx} style={{ background: '#F4F5F0', padding: 12, borderRadius: 10, marginBottom: 10 }}>
                 <div>
                   <strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''} - ${(item.price * item.quantity).toFixed(2)}
-{
-  (item.category?.includes('Hero') && item.category !== 'Party Heroes') && (() => {
-    const matchingCartItem = cart.find(
-      cartItem => cartItem.name === item.name && JSON.stringify(cartItem.addons) === JSON.stringify(item.addons)
-    );
-    return matchingCartItem ? (
-      <div style={{ marginTop: 8 }}>
-        <label style={{ fontSize: 14 }}>
-          Manual Price: $
-          <input
-            type="number"
-            value={matchingCartItem.manualPrice ?? ''}
-            onChange={(e) => {
-              const updatedCart = cart.map(cartItem => {
-                if (
-                  cartItem.name === item.name &&
-                  JSON.stringify(cartItem.addons) === JSON.stringify(item.addons)
-                ) {
-                  const manualPrice = parseFloat(e.target.value) || 0;
-                  return {
-                    ...cartItem,
-                    manualPrice,
-                    total:
-                      manualPrice +
-                      cartItem.addons.reduce(
-                        (sum, a) => sum + a.price * a.qty,
-                        0
-                      )
-                  };
-                }
-                return cartItem;
-              });
-              setCart(updatedCart);
-            }}
-            style={{
-              marginLeft: 8,
-              width: 80,
-              padding: 4,
-              borderRadius: 6,
-              border: '1px solid #ccc',
-              fontSize: '14px',
-            }}
-          />
-        </label>
-      </div>
-    ) : null;
-  })()
-}
 
                 {(item.category?.includes('Hero') && item.category !== 'Party Heroes') && (
                   <div style={{ marginTop: 8 }}>
@@ -878,19 +837,24 @@ return (
                       <input
                         type="number"
                         value={item.manualPrice ?? ''}
+                        min="0"
+                        step="0.01"
                         onChange={(e) => {
-                          const updatedCart = [...cart];
-                          updatedCart[item.indexes[0]] = {
-                            ...updatedCart[item.indexes[0]],
-                            manualPrice: parseFloat(e.target.value) || 0,
-                            total:
-                              (parseFloat(e.target.value) || 0) +
-                              updatedCart[item.indexes[0]].addons.reduce(
-                                (sum, a) => sum + a.price * a.qty,
-                                0
-                              ),
-                          };
-                          setCart(updatedCart);
+                          const value = e.target.value;
+                          const override = value === '' ? null : Number(value);
+                          if (override !== null && (!Number.isFinite(override) || override < 0)) return;
+                          setCart(prev => prev.map((entry, entryIndex) => {
+                            if (!item.indexes.includes(entryIndex)) return entry;
+                            const addonsTotal = (entry.addons || []).reduce(
+                              (sum, addon) => sum + addon.price * addon.qty, 0
+                            );
+                            const { manualPrice: _oldManualPrice, ...rest } = entry;
+                            return {
+                              ...rest,
+                              ...(override === null ? {} : { manualPrice: override }),
+                              total: (override === null ? entry.price : override) + addonsTotal,
+                            };
+                          }));
                         }}
                         style={{
                           marginLeft: 8,
@@ -905,14 +869,14 @@ return (
                   </div>
                 )}
 
-                  <button onClick={() => openCustomization(item, idx)} style={{ marginLeft: 10 }}>Edit</button>
-                  <button onClick={() => removeFromCart(idx)} style={{ marginLeft: 10, color: 'red' }}>Remove</button>
+                  <button onClick={() => { setShowCart(false); openCustomization(cart[item.indexes[0]], item.indexes[0]); }} style={{ marginLeft: 10 }}>Edit</button>
+                  <button onClick={() => setCart(prev => prev.filter((_, i) => !item.indexes.includes(i)))} style={{ marginLeft: 10, color: '#CD212A' }}>Remove</button>
                 </div>
                 <ul>
                   {item.addons && item.addons.map((addon, i) => (
                     <li key={i}>
                       {addon.qty}× {addon.name} (${(addon.price * addon.qty).toFixed(2)})
-                      <button onClick={() => removeAddonFromItem(idx, i)} style={{ marginLeft: 6, color: 'red' }}>✕</button>
+                      <button onClick={() => removeAddonFromItem(idx, i)} style={{ marginLeft: 6, color: '#CD212A' }}>✕</button>
                     </li>
                   ))}
                 </ul>
@@ -968,7 +932,7 @@ return (
                 type="button"
                 onClick={() => setTaxExempt((previous) => !previous)}
                 aria-pressed={taxExempt}
-                style={{ padding: '12px 16px', marginBottom: 12, width: '100%', borderRadius: 8, border: taxExempt ? '2px solid #18794e' : '1px solid #aaa', background: taxExempt ? '#d8f5e4' : '#f2f2f2', color: taxExempt ? '#145c3b' : '#222', fontWeight: 700, cursor: 'pointer', fontSize: 16 }}
+                style={{ padding: '12px 16px', marginBottom: 12, width: '100%', borderRadius: 8, border: taxExempt ? '2px solid #008C45' : '1px solid #aaa', background: taxExempt ? '#E0F3E8' : '#f2f2f2', color: taxExempt ? '#006B35' : '#222', fontWeight: 700, cursor: 'pointer', fontSize: 16 }}
               >
                 {taxExempt ? '✓ Tax Exempt ON — Remove Exemption' : 'Tax Exempt — Apply Exemption'}
               </button>
@@ -984,11 +948,11 @@ return (
 
             <div style={{ marginTop: 16, textAlign: 'right' }}>
               
-              <button onClick={clearCart} style={{ padding: '8px 16px', marginRight: 10, borderRadius: 8, background: '#FF3B30', color: '#fff', border: 'none' }}>
+              <button onClick={clearCart} style={{ padding: '8px 16px', marginRight: 10, borderRadius: 8, background: '#CD212A', color: '#fff', border: 'none' }}>
                 Clear Cart
               </button>
 
-<button onClick={() => { setShowCart(false); setManualSubtotal(''); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1px solid #ccc', background: '#f2f2f2' }}>Close Cart</button>
+<button onClick={() => { setShowCart(false); setManualSubtotal(''); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1px solid #ccc', background: '#F4F5F0' }}>Close Cart</button>
             </div>
           </div>
         </div>
