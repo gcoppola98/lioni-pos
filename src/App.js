@@ -192,9 +192,9 @@ const items = [
   { id: "C2", name: "Small Wise", price: 2.5, category: "Chips" },
   { id: "C3", name: "Large Wise", price: 4.79, category: "Chips" },
 
-  { id: "K1", name: "Chicken Fingers", price: 5.0, category: "Kid's Menu" },
-  { id: "K2", name: "Pasta", price: 5.0, category: "Kid's Menu" },
-  { id: "K3", name: "Sandwich", price: 5.0, category: "Kid's Menu" },
+  { id: "K1", name: "Kid's Chicken Fingers", price: 5.0, category: "Kid's Menu" },
+  { id: "K2", name: "Kid's Pasta", price: 5.0, category: "Kid's Menu" },
+  { id: "K3", name: "Kid's Sandwich", price: 5.0, category: "Kid's Menu" },
 
   { id: 'bread1', name: 'Italian Bread', price: 1.5, category: 'Bread Items' },
   { id: 'bread2', name: 'Hero Bread', price: 1.5, category: 'Bread Items' },
