@@ -627,10 +627,6 @@ function App() {
     setEditIndex(null);
   }
 
-  function removeFromCart(index) {
-    setCart((prev) => prev.filter((_, i) => i !== index));
-  }
-
   function removeAddonFromItem(itemIndex, addonIndex) {
     setCart((prev) => {
       const updated = [...prev];
