@@ -653,10 +653,24 @@ function App() {
 const finalTotal = subtotalWithTax + serviceFee;
 
 return (
-    <div style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', background: '#f9f9f9', padding: 20, minHeight: '100vh' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-        <h1 style={{ fontSize: '1.8rem' }}>Heroes POS</h1>
-        <button onClick={() => setShowCart(true)} style={{ position: 'relative', background: '#007AFF', color: '#fff', border: 'none', borderRadius: 20, padding: '6px 12px', fontSize: 14 }}>
+    <div className="lioni-pos-root" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', background: '#f9f9f9', padding: 20, minHeight: '100vh', width: '100%', maxWidth: '100%', boxSizing: 'border-box', overflowX: 'clip' }}>
+      <style>{`
+        html, body, #root { max-width: 100%; margin: 0; overflow-x: clip; }
+        .lioni-pos-root, .lioni-pos-root * { box-sizing: border-box; }
+        .lioni-pos-root { min-width: 0; }
+        .lioni-pos-root input, .lioni-pos-root select, .lioni-pos-root textarea { max-width: 100%; min-width: 0; }
+        .lioni-pos-root .lioni-overlay { padding: 12px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+        .lioni-pos-root .lioni-dialog { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+        @media (max-width: 600px) {
+          .lioni-pos-root { padding: 12px !important; }
+          .lioni-pos-root .lioni-overlay { align-items: center; height: 100dvh; }
+          .lioni-pos-root .lioni-dialog { width: 100% !important; max-height: calc(100dvh - 24px) !important; padding: 16px !important; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+          .lioni-pos-root button { touch-action: manipulation; }
+        }
+      `}</style>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, minWidth: 0, marginBottom: 20 }}>
+        <h1 style={{ fontSize: '1.8rem', minWidth: 0, margin: 0 }}>Lioni POS</h1>
+        <button onClick={() => setShowCart(true)} style={{ position: 'relative', flexShrink: 0, background: '#007AFF', color: '#fff', border: 'none', borderRadius: 20, padding: '6px 12px', fontSize: 14 }}>
           🛒 {cart.length} • ${subtotal.toFixed(2)}
         </button>
       </div>
@@ -680,7 +694,7 @@ return (
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: 12 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 100px), 1fr))', gap: 12 }}>
         {filteredItems.map(item => (
           <div
             key={item.id}
@@ -694,8 +708,8 @@ return (
       </div>
 
       {selectedItem?.category === 'Party Heroes' && (
-        <div onClick={(e) => { if (e.target === e.currentTarget) setSelectedItem(null); }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
-          <div style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
+        <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) setSelectedItem(null); }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
+          <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
             <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
             <label>Feet (min 2):{' '}
               <select value={partyHeroFeet} onChange={e => setPartyHeroFeet(Number(e.target.value))} style={{ padding: 8, fontSize: 16, borderRadius: 6 }}>
@@ -712,14 +726,14 @@ return (
       )}
 
       {selectedItem && isHeroItem(selectedItem) && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(4px)', backgroundColor: 'rgba(0,0,0,0.4)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => {
+        <div className="lioni-overlay" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(4px)', backgroundColor: 'rgba(0,0,0,0.4)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => {
       if (e.target === e.currentTarget) {
         setSelectedItem(null);
         setAddonSearch('');
         setExpandedAddonCategories([]);
       }
     }}>
-          <div onClick={(e) => e.stopPropagation()} style={{ background: 'white', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+          <div className="lioni-dialog" onClick={(e) => e.stopPropagation()} style={{ background: 'white', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <h2 style={{ margin: 0 }}>Customize {selectedItem.name}</h2>
               <div>
@@ -774,8 +788,8 @@ return (
 
       {/* Cart Modal */}
       {showCart && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => { if (e.target === e.currentTarget) { setShowCart(false); setManualSubtotal(''); } }}>
-          <div style={{ background: '#fff', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto' }}>
+        <div className="lioni-overlay" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => { if (e.target === e.currentTarget) { setShowCart(false); setManualSubtotal(''); } }}>
+          <div className="lioni-dialog" style={{ background: '#fff', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto' }}>
             {groupedCart.map((item, idx) => (
               <div key={idx} style={{ background: '#f2f2f2', padding: 12, borderRadius: 10, marginBottom: 10 }}>
                 <div>
