@@ -863,7 +863,32 @@ return (
       {/* Cart Modal */}
       {showCart && (
         <div className="lioni-overlay" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={(e) => { if (e.target === e.currentTarget) { setShowCart(false); setManualSubtotal(''); } }}>
-          <div className="lioni-dialog" style={{ background: '#ffffff', padding: 20, borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90%', overflowY: 'auto', overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
+          <div className="lioni-dialog" style={{ background: '#ffffff', borderRadius: 18, width: '90%', maxWidth: 500, maxHeight: '90dvh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+            {/* Fixed cart header: stays visible while only the cart contents scroll. */}
+            <div style={{ flexShrink: 0, padding: '14px 16px', background: '#F4F5F0', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+              <strong style={{ fontSize: 18, color: '#222' }}>🛒 Your Cart</strong>
+              <div style={{ display: 'flex', gap: 8 }}>
+                <button type="button" onClick={clearCart} style={{ padding: '10px 12px', borderRadius: 8, background: '#CD212A', color: '#fff', border: 'none', fontWeight: 600, cursor: 'pointer' }}>Clear Cart</button>
+                <button type="button" onClick={() => { setShowCart(false); setManualSubtotal(''); }} style={{ padding: '10px 12px', borderRadius: 8, border: '1px solid #ccc', background: '#fff', color: '#222', fontWeight: 600, cursor: 'pointer' }}>Close ✕</button>
+              </div>
+            </div>
+            {/* Tax exemption remains accessible even when the cart is scrolled. */}
+            <div style={{ flexShrink: 0, padding: '10px 16px', background: '#F4F5F0', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+              <div>
+                <strong style={{ fontSize: 15, color: '#222' }}>Tax Exempt</strong>
+                <div style={{ fontSize: 12, color: '#555' }}>{taxExempt ? 'Sales tax disabled' : 'Sales tax enabled'}</div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setTaxExempt(previous => !previous)}
+                aria-pressed={taxExempt}
+                aria-label={taxExempt ? 'Remove tax exemption' : 'Apply tax exemption'}
+                style={{ padding: '9px 14px', minWidth: 100, borderRadius: 8, border: taxExempt ? '2px solid #008C45' : '1px solid #aaa', background: taxExempt ? '#E0F3E8' : '#fff', color: taxExempt ? '#006B35' : '#222', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}
+              >
+                {taxExempt ? '✓ Exempt ON' : 'Exempt OFF'}
+              </button>
+            </div>
+            <div style={{ padding: 20, overflowY: 'auto', minHeight: 0, flex: 1, overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
             {groupedCart.map((item, idx) => (
               <div key={idx} style={{ background: '#F4F5F0', padding: 12, borderRadius: 10, marginBottom: 10 }}>
                 <div>
@@ -967,14 +992,6 @@ return (
                   style={{ marginLeft: 8, width: 80, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '16px' }}
                 />
               </label>
-              <button
-                type="button"
-                onClick={() => setTaxExempt((previous) => !previous)}
-                aria-pressed={taxExempt}
-                style={{ padding: '12px 16px', marginBottom: 12, width: '100%', borderRadius: 8, border: taxExempt ? '2px solid #008C45' : '1px solid #aaa', background: taxExempt ? '#E0F3E8' : '#f2f2f2', color: taxExempt ? '#006B35' : '#222', fontWeight: 700, cursor: 'pointer', fontSize: 16 }}
-              >
-                {taxExempt ? '✓ Tax Exempt ON — Remove Exemption' : 'Tax Exempt — Apply Exemption'}
-              </button>
               <p>Subtotal: ${subtotal.toFixed(2)}</p>
               <p>Tip: ${tip.toFixed(2)}</p>
               <p>Delivery Fee: ${delivery.toFixed(2)}</p>
@@ -985,13 +1002,6 @@ return (
               <p><strong>Final Total: ${finalTotal.toFixed(2)}</strong></p>
             </div>
 
-            <div style={{ marginTop: 16, textAlign: 'right' }}>
-              
-              <button onClick={clearCart} style={{ padding: '8px 16px', marginRight: 10, borderRadius: 8, background: '#CD212A', color: '#fff', border: 'none' }}>
-                Clear Cart
-              </button>
-
-<button onClick={() => { setShowCart(false); setManualSubtotal(''); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1px solid #ccc', background: '#F4F5F0' }}>Close Cart</button>
             </div>
           </div>
         </div>
