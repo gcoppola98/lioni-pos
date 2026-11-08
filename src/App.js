@@ -171,12 +171,9 @@ const items = [
   { id: 'A9', name: 'Rice Ball Special', price: 9.5, category: 'Appetizers' },
   { id: 'A10', name: 'Mozzarella Carozza', price: 4.95, category: 'Appetizers' },
   { id: 'A11', name: '1 LB. Stuffed Mushrooms', price: 11.99, category: 'Appetizers' },
-  { id: 'A12', name: '1/2 LB. Potato Salad', price: 3, category: 'Appetizers' },
-  { id: 'A13', name: '1 LB. Potato Salad', price: 6, category: 'Appetizers' },
-  { id: 'A14', name: '1/2 LB. Macaroni Salad', price: 3, category: 'Appetizers' },
-  { id: 'A15', name: '1 LB. Macaroni Salad', price: 6, category: 'Appetizers' },
-  { id: 'A16', name: '1/2 LB. Coleslaw', price: 3, category: 'Appetizers' },
-  { id: 'A17', name: '1 LB. Coleslaw', price: 6, category: 'Appetizers' },
+  { id: 'A12', name: 'Potato Salad', price: 3, smallPrice: 3, largePrice: 6, appetizerSize: true, category: 'Appetizers' },
+  { id: 'A14', name: 'Macaroni Salad', price: 3, smallPrice: 3, largePrice: 6, appetizerSize: true, category: 'Appetizers' },
+  { id: 'A16', name: 'Coleslaw', price: 3, smallPrice: 3, largePrice: 6, appetizerSize: true, category: 'Appetizers' },
 
   { id: "B1", name: "20oz Soda", price: 3.0, category: "Beverages" },
   { id: "B2", name: "2 Liter Soda", price: 5.0, category: "Beverages" },
@@ -192,9 +189,9 @@ const items = [
   { id: "C2", name: "Small Wise", price: 2.5, category: "Chips" },
   { id: "C3", name: "Large Wise", price: 4.79, category: "Chips" },
 
-  { id: "K1", name: "Chicken Fingers", price: 5.0, category: "Kid's Menu" },
-  { id: "K2", name: "Pasta", price: 5.0, category: "Kid's Menu" },
-  { id: "K3", name: "Sandwich", price: 5.0, category: "Kid's Menu" },
+  { id: "K1", name: "Kid's Chicken Fingers", price: 5.0, category: "Kid's Menu" },
+  { id: "K2", name: "Kid's Pasta", price: 5.0, category: "Kid's Menu" },
+  { id: "K3", name: "Kid's Sandwich", price: 5.0, category: "Kid's Menu" },
 
   { id: 'bread1', name: 'Italian Bread', price: 1.5, category: 'Bread Items' },
   { id: 'bread2', name: 'Hero Bread', price: 1.5, category: 'Bread Items' },
@@ -241,14 +238,14 @@ const items = [
   { id: 'milk2', name: '1/2 Gallon Milk', price: 3.69, category: 'Milk' },
   { id: 'milk3', name: 'Gallon Milk', price: 5.49, category: 'Milk' },
 
-  { id: "PH_1", name: "American", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Boars Head Ham, Roasted Turkey Breast, Home Cooked Roast Beef, Everroast Chicken Breast, Virginia Ham, American & Swiss Cheese. Topped With Shredded Iceberg Lettuce & Tomato." },
-  { id: "PH_2", name: "Italian", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Citterio Ham, Citterio Genoa Salami, Cappy Ham, Citterio Pepperoni, Mortadella, Soppressatta, Lioni Fresh Mozzarella, Roasted Peppers & Extra Virgin Olive Oil" },
-  { id: "PH_3", name: "Classic", pricePerFoot: 35, category: "Party Heroes – Catering", description: "Breaded Chicken Cutlets, Lioni Fresh Mozzarella, Roasted Peppers, Extra Virgin Olive Oil, Salt & Pepper" },
-  { id: "PH_4", name: "Basic", pricePerFoot: 25, category: "Party Heroes – Catering", description: "Boars Ham, Turkey, Roast Beef, American Cheese, Shredded Iceberg Lettuce & Tomato" },
-  { id: "PH_5", name: "Grilled Classic", pricePerFoot: 35, category: "Party Heroes – Catering", description: "Grilled Chicken Cutlets, Lioni Fresh Mozzarella, Roasted Peppers, Extra Virgin Olive Oil, Salt & Pepper" },
-  { id: "PH_6", name: "Eggplant Classic", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Breaded Eggplant, Lioni Fresh Mozzarella, Roasted Peppers & Extra Virgin Olive Oil" },
-  { id: "PH_7", name: "Grilled Veggie Deluxe", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Grilled Marinated Vegetables (Yellow Squash, Green Squash, Carrots, Red Onions, Green Pepper, Mushrooms) w/ Lioni Fresh Mozzarella & Balsamic Vinegar" },
-  { id: "PH_8", name: "Charlie Tuna", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Tuna Salad, Shredded Iceberg Lettuce, Tomato, Sliced Onion, Salt & Pepper" },
+  { id: "PH_1", wheelPrices: { 3: 99, 4: 129 }, name: "American", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Boars Head Ham, Roasted Turkey Breast, Home Cooked Roast Beef, Everroast Chicken Breast, Virginia Ham, American & Swiss Cheese. Topped With Shredded Iceberg Lettuce & Tomato." },
+  { id: "PH_2", wheelPrices: { 3: 99, 4: 129 }, name: "Italian", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Citterio Ham, Citterio Genoa Salami, Cappy Ham, Citterio Pepperoni, Mortadella, Soppressatta, Lioni Fresh Mozzarella, Roasted Peppers & Extra Virgin Olive Oil" },
+  { id: "PH_3", wheelPrices: { 3: 109, 4: 139 }, name: "Classic", pricePerFoot: 35, category: "Party Heroes – Catering", description: "Breaded Chicken Cutlets, Lioni Fresh Mozzarella, Roasted Peppers, Extra Virgin Olive Oil, Salt & Pepper" },
+  { id: "PH_4", wheelPrices: { 3: 99, 4: 129 }, name: "Basic", pricePerFoot: 25, category: "Party Heroes – Catering", description: "Boars Ham, Turkey, Roast Beef, American Cheese, Shredded Iceberg Lettuce & Tomato" },
+  { id: "PH_5", wheelPrices: { 3: 109, 4: 139 }, name: "Grilled Classic", pricePerFoot: 35, category: "Party Heroes – Catering", description: "Grilled Chicken Cutlets, Lioni Fresh Mozzarella, Roasted Peppers, Extra Virgin Olive Oil, Salt & Pepper" },
+  { id: "PH_6", wheelPrices: { 3: 99, 4: 129 }, name: "Eggplant Classic", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Breaded Eggplant, Lioni Fresh Mozzarella, Roasted Peppers & Extra Virgin Olive Oil" },
+  { id: "PH_7", wheelPrices: { 3: 99, 4: 129 }, name: "Grilled Veggie Deluxe", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Grilled Marinated Vegetables (Yellow Squash, Green Squash, Carrots, Red Onions, Green Pepper, Mushrooms) w/ Lioni Fresh Mozzarella & Balsamic Vinegar" },
+  { id: "PH_8", wheelPrices: { 3: 99, 4: 129 }, name: "Charlie Tuna", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Tuna Salad, Shredded Iceberg Lettuce, Tomato, Sliced Onion, Salt & Pepper" },
   { id: "PH_9", name: "15th Ave Special", pricePerFoot: 50, category: "Party Heroes – Catering", description: "Prosciutto Di Parma, Capicola, Genoa Salami, Pepper Ham, Lioni Fresh Mozzarella, Roasted Peppers & Extra Virgin Olive Oil" },
   { id: "PH_10", name: "Extravaganza", pricePerFoot: 75, category: "Party Heroes – Catering", description: "Veal Cutlets, Prosciutto Di Parma, Provolone, Sliced Banana Peppers, Shaved Reggiano, Lioni Fresh Mozzarella, Basil Mix, Sun-Dried Tomatoes, Olive Oil, Oregano, Salt & Pepper" },
   { id: "PH_11", name: "#1", pricePerFoot: 29, category: "Party Heroes – Catering", description: "Salami, Fresh Mozzarella, Olive Oil, Salt, Black Pepper And Oregano" },
@@ -448,7 +445,7 @@ const items = [
   {"id": "BR_17", "name": "Grape Jelly", "category": "Breakfast – Catering", "price": 7.5, "poundPrice": 7.5},
   {"id": "BR_18", "name": "Egg Salad", "category": "Breakfast – Catering", "price": 9, "poundPrice": 9},
   {"id": "BR_19", "name": "Tuna Fish/Chicken Salad", "category": "Breakfast – Catering", "price": 12, "poundPrice": 12},
-  {"id": "PL_1", "name": "Wrap Platter", "category": "Platters – Catering", "price": 65, "smallPrice": 65, "largePrice": 100},
+  {"id": "PL_1", "name": "Wrap Platter", "category": "Platters – Catering", "price": 65, "smallPrice": 65, "largePrice": 125},
   {"id": "PL_2", "name": "Antipasto Platter", "category": "Platters – Catering", "price": 99, "smallPrice": 99, "largePrice": 175},
   {"id": "PL_3", "name": "Mozzarella & Tomato Platter", "category": "Platters – Catering", "price": 65, "smallPrice": 65, "largePrice": 125},
   {"id": "PL_4", "name": "Vegetable Dip Platter", "category": "Platters – Catering", "price": 65, "smallPrice": 65, "largePrice": 100},
@@ -610,6 +607,9 @@ function App() {
   const [melodySize, setMelodySize] = useState('2');
   const [urbanHeroOption, setUrbanHeroOption] = useState('Regular / No Tuna');
   const [partyHeroFeet, setPartyHeroFeet] = useState(2);
+  const [partyHeroWheel, setPartyHeroWheel] = useState(false);
+  const [partyHeroTray, setPartyHeroTray] = useState(false);
+  const [partyHeroPan, setPartyHeroPan] = useState(false);
   const [hotFoodOption, setHotFoodOption] = useState('half');
   const [platterOption, setPlatterOption] = useState('small');
   const [cateringOption, setCateringOption] = useState('half');
@@ -732,7 +732,7 @@ function App() {
       setCateringOption(item.cateringOption || (item.coffeePrices ? '15' : item.personPrice != null ? 'person' : item.poundPrice != null ? 'pound' : 'half'));
       return;
     }
-    if (item.id === 'bread8') {
+    if (item.id === 'bread8' || item.appetizerSize) {
       setSelectedItem(item);
       setEditIndex(index);
       setPlatterOption(item.platterOption || 'small');
@@ -766,6 +766,10 @@ function App() {
       setSelectedItem(item);
       setEditIndex(index);
       setPartyHeroFeet(item.feet || 2);
+      setPartyHeroWheel(Boolean(item.partyHeroWheel));
+      setPartyHeroTray(Boolean(item.partyTray) && !item.partyPan);
+      setPartyHeroPan(Boolean(item.partyPan) || (item.name.includes('(Pan)') && !item.partyTray));
+      setHeroQuantity(1);
       return;
     }
     if (!isHeroItem(item)) {
@@ -831,9 +835,9 @@ function App() {
       setHeroQuantity(1);
       return;
     }
-    if (selectedItem.category === "Platters – Catering" || selectedItem.id === "bread8") {
+    if (selectedItem.category === "Platters – Catering" || selectedItem.id === "bread8" || selectedItem.appetizerSize) {
       const price = platterOption === 'large' ? selectedItem.largePrice : platterOption === 'person' ? selectedItem.personPrice : platterOption === 'fixed' ? selectedItem.fixedPrice : selectedItem.smallPrice;
-      const sizeLabel = platterOption === 'large' ? 'Large' : platterOption === 'small' ? 'Small' : platterOption === 'person' ? 'Per Person' : null;
+      const sizeLabel = selectedItem.appetizerSize ? (platterOption === 'large' ? '1 LB.' : '1/2 LB.') : platterOption === 'large' ? 'Large' : platterOption === 'small' ? 'Small' : platterOption === 'person' ? 'Per Person' : null;
       const platterItem = { ...selectedItem, platterOption, price, total: price, addons: [], name: sizeLabel ? `${selectedItem.name} (${sizeLabel})` : selectedItem.name };
       setCart(prev => {
         const copies = Array.from({ length: heroQuantity }, () => ({ ...platterItem }));
@@ -866,8 +870,13 @@ function App() {
     }
     if (selectedItem.category === "Party Heroes – Catering") {
       const feet = partyHeroFeet;
-      const price = selectedItem.pricePerFoot * feet + 3;
-      const partyItem = { ...selectedItem, feet, price, total: price, addons: [], name: `${selectedItem.name} (${feet} ft)` };
+      const isWheel = partyHeroWheel && Boolean(selectedItem.wheelPrices);
+      const tray = partyHeroTray || partyHeroPan || isWheel;
+      const price = isWheel
+        ? selectedItem.wheelPrices[feet]
+        : (selectedItem.pricePerFoot + (feet === 4 ? 2 : 0)) * feet + (tray ? 0 : 3);
+      const baseName = selectedItem.name.replace(/ \(\d ft(?:, Pan|, Tray|, Cutting Board)\)$/, '').replace(/ \(\dFT Wheel\)$/, '');
+      const partyItem = { ...selectedItem, feet, partyTray: partyHeroTray, partyPan: partyHeroPan, partyHeroWheel: isWheel, price, total: price, addons: [], name: isWheel ? `${baseName} (${feet}FT Wheel)` : `${baseName} (${feet} ft${partyHeroPan ? ', Pan' : partyHeroTray ? ', Tray' : ', Cutting Board'})` };
       setCart(prev => {
         const copies = Array.from({ length: heroQuantity }, () => ({ ...partyItem }));
         if (editIndex === null) return [...prev, ...copies];
@@ -1066,7 +1075,7 @@ return (
       `}</style>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, minWidth: 0, marginBottom: 20 }}>
         <button type="button" aria-label="Return to Lioni POS home" title="Back to home" onClick={() => { setActiveCategory('All'); setSearchTerm(''); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ padding: 0, border: 'none', background: 'transparent', cursor: 'pointer', flexShrink: 1, minWidth: 0 }}>
-          <img src={`${process.env.PUBLIC_URL}/lioni-logo.png`} alt="Lioni POS — Home" style={{ display: 'block', width: 'clamp(135px, 38vw, 205px)', height: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
+          <img src={`${process.env.PUBLIC_URL}/lioni-pos-logo.png`} alt="Lioni POS — Home" style={{ display: 'block', width: 'clamp(150px, 35vw, 250px)', height: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
         </button>
         <button onClick={() => setShowCart(true)} style={{ position: 'relative', flexShrink: 0, background: '#008C45', color: '#fff', border: 'none', borderRadius: 20, padding: '6px 12px', fontSize: 14 }}>
           🛒 {cart.length} • ${subtotal.toFixed(2)}
@@ -1102,7 +1111,7 @@ return (
             onClick={() => openCustomization(item)}
           >
             <strong>{item.name}</strong>
-            {((!["Hot Food – Catering", "Platters – Catering", "Salads – Catering", "Breakfast – Catering", "Melody Lanes – Catering"].includes(item.category) && item.id !== "bread8") || item.fixedPrice != null) && <div>{item.category === "Party Heroes – Catering" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
+            {((!["Hot Food – Catering", "Platters – Catering", "Salads – Catering", "Breakfast – Catering", "Melody Lanes – Catering"].includes(item.category) && item.id !== "bread8" && !item.appetizerSize) || item.fixedPrice != null) && <div>{item.category === "Party Heroes – Catering" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
           </div>
         ))}
       </div>
@@ -1204,7 +1213,7 @@ return (
         </div>
       )}
 
-      {(selectedItem?.category === 'Platters – Catering' || selectedItem?.id === 'bread8') && (
+      {(selectedItem?.category === 'Platters – Catering' || selectedItem?.id === 'bread8' || selectedItem?.appetizerSize) && (
         <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) { setSelectedItem(null); setEditIndex(null); } }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
           <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
             <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
@@ -1219,8 +1228,8 @@ return (
             {selectedItem.fixedPrice == null && <div role="radiogroup" aria-label="Select platter size">
               <strong style={{ display: 'block', marginBottom: 8 }}>{selectedItem.personPrice != null ? 'Price Per Person' : 'Select Size'}</strong>
               {[
-                ...(selectedItem.smallPrice != null ? [{ key: 'small', label: 'Small', price: selectedItem.smallPrice }] : []),
-                ...(selectedItem.largePrice != null ? [{ key: 'large', label: 'Large', price: selectedItem.largePrice }] : []),
+                ...(selectedItem.smallPrice != null ? [{ key: 'small', label: selectedItem.appetizerSize ? '1/2 LB.' : 'Small', price: selectedItem.smallPrice }] : []),
+                ...(selectedItem.largePrice != null ? [{ key: 'large', label: selectedItem.appetizerSize ? '1 LB.' : 'Large', price: selectedItem.largePrice }] : []),
                 ...(selectedItem.personPrice != null ? [{ key: 'person', label: 'Per Person', price: selectedItem.personPrice }] : []),
               ].map(opt => (
                 <label key={opt.key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: 12, marginBottom: 8, border: `2px solid ${platterOption === opt.key ? '#008C45' : '#ddd'}`, borderRadius: 10, cursor: 'pointer', background: platterOption === opt.key ? '#f0faf4' : '#fff' }}>
@@ -1295,20 +1304,46 @@ return (
                 <button type="button" onClick={() => setHeroQuantity(q => Math.min(99, q + 1))} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>+</button>
               </div>
             </div>
-                        <div role="radiogroup" aria-label="Select hero size" style={{ marginTop: 14 }}>
+            <div role="radiogroup" aria-label="Select hero size" style={{ marginTop: 14 }}>
               <strong style={{ display: 'block', marginBottom: 8 }}>Select Hero Size</strong>
-              {[2, 3].map(feet => (
-                <label key={feet} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '12px', marginBottom: 8, border: `2px solid ${partyHeroFeet === feet ? '#008C45' : '#ddd'}`, borderRadius: 10, cursor: 'pointer', background: partyHeroFeet === feet ? '#f0faf4' : '#fff' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <input type="radio" name="partyHeroFeet" value={feet} checked={partyHeroFeet === feet} onChange={() => setPartyHeroFeet(feet)} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
-                    <strong>{feet} Foot Hero</strong>
-                  </span>
-                  <strong>${(selectedItem.pricePerFoot * feet + 3).toFixed(2)}</strong>
-                </label>
-              ))}
+              {[
+                { feet: 2, label: '2 Foot Hero', wheel: false },
+                { feet: 3, label: '3 Foot Hero', wheel: false },
+                ...(selectedItem.wheelPrices ? [
+                  { feet: 3, label: '3 Foot Wheel', wheel: true },
+                  { feet: 4, label: '4 Foot Wheel', wheel: true },
+                ] : []),
+                { feet: 4, label: '4 Foot Number/Letter Hero', wheel: false },
+              ].map(option => {
+                const tray = partyHeroPan || partyHeroTray;
+                const price = option.wheel
+                  ? selectedItem.wheelPrices[option.feet]
+                  : (selectedItem.pricePerFoot + (option.feet === 4 ? 2 : 0)) * option.feet + (tray ? 0 : 3);
+                const active = partyHeroFeet === option.feet && partyHeroWheel === option.wheel;
+                return (
+                  <label key={`${option.feet}-${option.wheel}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '12px', marginBottom: 8, border: `2px solid ${active ? '#008C45' : '#ddd'}`, borderRadius: 10, cursor: 'pointer', background: active ? '#f0faf4' : '#fff' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <input type="radio" name="partyHeroSize" checked={active} onChange={() => { setPartyHeroFeet(option.feet); setPartyHeroWheel(option.wheel); }} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
+                      <strong>{option.label}</strong>
+                    </span>
+                    <strong style={{ whiteSpace: 'nowrap' }}>${price.toFixed(2)}</strong>
+                  </label>
+                );
+              })}
             </div>
-            <p style={{ fontSize: 13, color: '#555' }}>Includes $3 cutting board charge per hero.</p>
-            
+            <div style={{ margin: '12px 0' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer', marginBottom: 10 }}>
+                <input type="checkbox" checked={partyHeroTray} onChange={e => { setPartyHeroTray(e.target.checked); if (e.target.checked) setPartyHeroPan(false); }} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
+                <strong>Tray (remove $3 cutting board fee)</strong>
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer' }}>
+                <input type="checkbox" checked={partyHeroPan} onChange={e => { setPartyHeroPan(e.target.checked); if (e.target.checked) setPartyHeroTray(false); }} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
+                <strong>Pan (remove $3 cutting board fee)</strong>
+              </label>
+              <p style={{ fontSize: 13, color: '#555', marginTop: 6 }}>{partyHeroWheel ? 'Wheel selected — no cutting board fee.' : partyHeroPan ? 'Pan selected — no cutting board fee.' : partyHeroTray ? 'Tray selected — no cutting board fee.' : 'Includes $3 cutting board charge per hero.'}</p>
+            </div>
+            {partyHeroFeet === 4 && !partyHeroWheel && <p style={{ fontSize: 13, color: '#555' }}>4FT Number/Letter Hero: +$2 per foot included.</p>}
+            <p><strong>Total: ${((partyHeroWheel && selectedItem.wheelPrices ? selectedItem.wheelPrices[partyHeroFeet] : (selectedItem.pricePerFoot + (partyHeroFeet === 4 ? 2 : 0)) * partyHeroFeet + ((partyHeroPan || partyHeroTray) ? 0 : 3)) * heroQuantity).toFixed(2)}</strong></p>
             <div style={{ display: 'flex', gap: 8 }}>
               <button onClick={saveToCart} style={{ background: '#008C45', color: 'white', border: 0, borderRadius: 7, padding: '9px 14px' }}>{editIndex === null ? `Add ${heroQuantity} to Cart` : `Save ${heroQuantity} to Cart`}</button>
               <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '9px 14px' }}>Cancel</button>
