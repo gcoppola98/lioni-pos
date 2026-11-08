@@ -400,6 +400,71 @@ const items = [
   { id: "PH_156", name: "#9A", pricePerFoot: 30, category: "Party Heroes", description: "Cappy Ham, Sweet Sopressata, Lioni Smoked Mozzarella, Lettuce, Tomato, Olive Oil, Salt, Pepper And Oregano" },
   { id: "PH_157", name: "#10A", pricePerFoot: 26, category: "Party Heroes", description: "Lioni Smoked Mozzarella, Lioni Fresh Mozzarella, Arugula, Olive Oil, Lettuce, Salt Pepper And Oregano" },
   { id: "PH_158", name: "#11A", pricePerFoot: 30, category: "Party Heroes", description: "Lioni Smoked Mozaarella, Fried Eggplant, Roasted Peppers, Olive Oil, Balsamic Vinegar, Oregano, Salt And Pepper" },
+
+  {"id": "HF_1", "name": "Baked Clams", "category": "Hot Food – Catering", "price": 20, "dozenPrice": 20},
+  {"id": "HF_2", "name": "Baked Ziti", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_3", "name": "Broccoli Rabe", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125, "poundPrice": 10},
+  {"id": "HF_4", "name": "Broccoli with Garlic & Oil (Sauteed Broccoli)", "category": "Hot Food – Catering", "price": 45, "halfPrice": 45, "fullPrice": 90},
+  {"id": "HF_5", "name": "Chicken Fingers", "category": "Hot Food – Catering", "price": 45, "halfPrice": 45, "fullPrice": 90},
+  {"id": "HF_6", "name": "Chicken Francese", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_7", "name": "Chicken Marsala", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_8", "name": "Chicken Parm", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_9", "name": "Chicken Rollatini", "category": "Hot Food – Catering", "price": 75, "halfPrice": 75, "fullPrice": 150},
+  {"id": "HF_10", "name": "Chicken Sorrentino", "category": "Hot Food – Catering", "price": 95, "halfPrice": 95, "fullPrice": 190},
+  {"id": "HF_11", "name": "Chicken Wings", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_12", "name": "Eggplant Parm", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_13", "name": "Eggplant Rollatini", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_14", "name": "Filet Of Sole Oreganata", "category": "Hot Food – Catering", "price": 100, "halfPrice": 100, "fullPrice": 175},
+  {"id": "HF_15", "name": "French Fries", "category": "Hot Food – Catering", "price": 30, "halfPrice": 30, "fullPrice": 60},
+  {"id": "HF_16", "name": "Fried Calamari", "category": "Hot Food – Catering", "price": 75, "halfPrice": 75, "fullPrice": 145},
+  {"id": "HF_17", "name": "Fried Ravioli", "category": "Hot Food – Catering", "price": 30, "halfPrice": 30, "fullPrice": 60},
+  {"id": "HF_18", "name": "Fried Shrimp", "category": "Hot Food – Catering", "price": 90, "halfPrice": 90, "fullPrice": 160, "poundPrice": 20},
+  {"id": "HF_19", "name": "Fried Zucchini", "category": "Hot Food – Catering", "price": 45, "halfPrice": 45, "fullPrice": 90},
+  {"id": "HF_20", "name": "Greek Pasta", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_21", "name": "Grilled Chicken", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125, "poundPrice": 11},
+  {"id": "HF_22", "name": "Grilled Vegetables", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95, "poundPrice": 9},
+  {"id": "HF_23", "name": "Lasagna", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_24", "name": "Linguini with Clams", "category": "Hot Food – Catering", "price": 95, "halfPrice": 95, "fullPrice": 190},
+  {"id": "HF_25", "name": "Linguini with Oil", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_26", "name": "Mac N Cheese", "category": "Hot Food – Catering", "price": 25, "halfPrice": 25, "fullPrice": 50},
+  {"id": "HF_27", "name": "Manicotti", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_28", "name": "Mashed Potatoes", "category": "Hot Food – Catering", "price": 35, "halfPrice": 35, "fullPrice": 70},
+  {"id": "HF_29", "name": "Meatballs (Sauce)", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_30", "name": "Mozzarella Sticks", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_31", "name": "Orecchiette with Broccoli Rabe & Sausage", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_32", "name": "Penne Broccoli", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_33", "name": "Penne Marinara", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_34", "name": "Penne Vodka", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_35", "name": "Penne with Sundried Tomatoes & Broccoli", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_36", "name": "Pernil", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_37", "name": "Pigs In A Blanket", "category": "Hot Food – Catering", "price": 75, "halfPrice": 75, "fullPrice": 145},
+  {"id": "HF_38", "name": "Potato Croquettes", "category": "Hot Food – Catering", "price": 30, "halfPrice": 30, "fullPrice": 60},
+  {"id": "HF_39", "name": "Prosciutto Balls", "category": "Hot Food – Catering", "price": 30, "halfPrice": 30, "fullPrice": 60},
+  {"id": "HF_40", "name": "Ravioli (Sauce)", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_41", "name": "Red Roasted Potatoes", "category": "Hot Food – Catering", "price": 45, "halfPrice": 45, "fullPrice": 90},
+  {"id": "HF_42", "name": "Rice Balls", "category": "Hot Food – Catering", "price": 30, "halfPrice": 30, "fullPrice": 60},
+  {"id": "HF_43", "name": "Roast Pork", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_44", "name": "Roasted Potatoes", "category": "Hot Food – Catering", "price": 45, "halfPrice": 45, "fullPrice": 90},
+  {"id": "HF_45", "name": "Sausage (Hot/Sweet)", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_46", "name": "Sausage & Broccoli Rabe", "category": "Hot Food – Catering", "price": 95, "halfPrice": 95, "fullPrice": 190},
+  {"id": "HF_47", "name": "Sausage & Potatoes", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_48", "name": "Sausage & Peppers", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_49", "name": "Shrimp Oreganata", "category": "Hot Food – Catering", "price": 90, "halfPrice": 90, "fullPrice": 145},
+  {"id": "HF_50", "name": "Shrimp Parm", "category": "Hot Food – Catering", "price": 90, "halfPrice": 90, "fullPrice": 145},
+  {"id": "HF_51", "name": "Sliced Sweet Ham", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_52", "name": "Sliced Turkey With Gravy", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_53", "name": "Stuffed Mushrooms", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 100, "poundPrice": 12},
+  {"id": "HF_54", "name": "Stuffed Shells", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_55", "name": "Swedish Meatballs", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
+  {"id": "HF_56", "name": "Tortellini Pesto", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_57", "name": "Tortellini", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_58", "name": "Tri Color Pasta", "category": "Hot Food – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95},
+  {"id": "HF_59", "name": "Veal Francese", "category": "Hot Food – Catering", "price": 100, "halfPrice": 100, "fullPrice": 180},
+  {"id": "HF_60", "name": "Veal Marsala", "category": "Hot Food – Catering", "price": 100, "halfPrice": 100, "fullPrice": 180},
+  {"id": "HF_61", "name": "Veal Parm", "category": "Hot Food – Catering", "price": 100, "halfPrice": 100, "fullPrice": 180},
+  {"id": "HF_62", "name": "Veal Rollatini", "category": "Hot Food – Catering", "price": 125, "halfPrice": 125, "fullPrice": 200},
+  {"id": "HF_63", "name": "White Rice", "category": "Hot Food – Catering", "price": 30, "halfPrice": 30, "fullPrice": 45},
+  {"id": "HF_64", "name": "Whole Wheat Penne/Ziti", "category": "Hot Food – Catering", "price": 65, "halfPrice": 65, "fullPrice": 125},
   
 ];
 
@@ -480,11 +545,12 @@ const specialCustomAddons = [
   { name: 'Just Proscuitto or Veal (No Cheese)', price: 16 },
 ];
 
-const categories = ['All', 'Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes', 'Chips', 'Bread Items', 'Appetizers', "Kid's Menu", 'Beverages', 'Desserts', 'Grocery Items', 'Milk', 'Party Heroes'];
+const categories = ['All', 'Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes', 'Chips', 'Bread Items', 'Appetizers', "Kid's Menu", 'Beverages', 'Desserts', 'Grocery Items', 'Milk', 'Party Heroes', 'Hot Food – Catering'];
 
 function App() {
   const [cart, setCart] = useState([]);
   const [partyHeroFeet, setPartyHeroFeet] = useState(2);
+  const [hotFoodOption, setHotFoodOption] = useState('half');
   const [heroQuantity, setHeroQuantity] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
@@ -578,6 +644,13 @@ function App() {
   
   function openCustomization(item, index = null) {
     setHeroQuantity(1);
+    if (item.category === "Hot Food – Catering") {
+      setSelectedItem(item);
+      setEditIndex(index);
+      setHotFoodOption(item.hotFoodOption || (item.dozenPrice ? 'dozen' : 'half'));
+      setHeroQuantity(index !== null ? 1 : 1);
+      return;
+    }
     if (item.category === "Party Heroes") {
       setSelectedItem(item);
       setEditIndex(index);
@@ -597,6 +670,23 @@ function App() {
 
 
   function saveToCart() {
+    if (selectedItem.category === "Hot Food – Catering") {
+      const option = hotFoodOption;
+      const price = option === 'full' ? selectedItem.fullPrice : option === 'pound' ? selectedItem.poundPrice : option === 'dozen' ? selectedItem.dozenPrice : selectedItem.halfPrice;
+      const sizeLabel = option === 'full' ? 'Full Tray' : option === 'pound' ? '1 lb' : option === 'dozen' ? '1 Dozen' : 'Half Tray';
+      const hotItem = { ...selectedItem, hotFoodOption: option, price, total: price, addons: [], name: `${selectedItem.name} (${sizeLabel})` };
+      setCart(prev => {
+        const copies = Array.from({ length: heroQuantity }, () => ({ ...hotItem }));
+        if (editIndex === null) return [...prev, ...copies];
+        const updated = [...prev];
+        updated.splice(editIndex, 1, ...copies);
+        return updated;
+      });
+      setSelectedItem(null);
+      setEditIndex(null);
+      setHeroQuantity(1);
+      return;
+    }
     if (selectedItem.category === "Party Heroes") {
       const feet = partyHeroFeet;
       const price = selectedItem.pricePerFoot * feet + 3;
@@ -691,6 +781,73 @@ function App() {
     return grouped;
   }
 
+  // Match the Manual Subtotal controls: type an override or adjust by $0.50.
+  // Clearing the field restores the item's original price.
+  function updateCartManualPrice(itemIndexes, value) {
+    const override = value === '' ? null : Number(value);
+    if (override !== null && (!Number.isFinite(override) || override < 0)) return;
+    setCart(prev => prev.map((entry, index) => {
+      if (!itemIndexes.includes(index)) return entry;
+      const addonsTotal = (entry.addons || []).reduce((sum, addon) => sum + addon.price * addon.qty, 0);
+      const { manualPrice: _oldManualPrice, ...rest } = entry;
+      return {
+        ...rest,
+        ...(override === null ? {} : { manualPrice: override }),
+        total: (override === null ? entry.price : override) + addonsTotal,
+      };
+    }));
+  }
+
+  // Restore the original base price for one grouped cart row, retaining add-ons.
+  function resetCartItemPrice(itemIndexes) {
+    updateCartManualPrice(itemIndexes, '');
+  }
+
+  // Restore all manual item prices and remove any manual subtotal override.
+  function resetAllCartPrices() {
+    setCart(prev => prev.map(entry => {
+      const { manualPrice: _oldManualPrice, ...rest } = entry;
+      const addonsTotal = (entry.addons || []).reduce((sum, addon) => sum + addon.price * addon.qty, 0);
+      return { ...rest, total: entry.price + addonsTotal };
+    }));
+    setManualSubtotal('');
+  }
+
+  // Adjust a grouped cart row without losing its selected size, price, or add-ons.
+  function changeCartQuantity(itemIndexes, adjustment) {
+    setCart(prev => {
+      if (adjustment > 0) {
+        const template = prev[itemIndexes[0]];
+        if (!template || itemIndexes.length >= 99) return prev;
+        return [...prev, { ...template, addons: (template.addons || []).map(a => ({ ...a })) }];
+      }
+      if (adjustment < 0 && itemIndexes.length > 1) {
+        const removeIndex = itemIndexes[itemIndexes.length - 1];
+        return prev.filter((_, i) => i !== removeIndex);
+      }
+      return prev;
+    });
+  }
+
+  // Set the quantity of a grouped cart item directly from its dropdown.
+  function setCartQuantity(itemIndexes, desiredQuantity) {
+    const target = Math.max(1, Math.min(99, Number(desiredQuantity) || 1));
+    setCart(prev => {
+      const currentIndexes = itemIndexes.filter(i => i >= 0 && i < prev.length);
+      if (!currentIndexes.length || currentIndexes.length === target) return prev;
+      if (target < currentIndexes.length) {
+        const remove = new Set(currentIndexes.slice(target));
+        return prev.filter((_, i) => !remove.has(i));
+      }
+      const template = prev[currentIndexes[0]];
+      const copies = Array.from({ length: target - currentIndexes.length }, () => ({
+        ...template,
+        addons: (template.addons || []).map(a => ({ ...a }))
+      }));
+      return [...prev, ...copies];
+    });
+  }
+
   const groupedCart = groupCartItems(cart);
 
 const finalTotal = subtotalWithTax + serviceFee;
@@ -751,10 +908,48 @@ return (
             onClick={() => openCustomization(item)}
           >
             <strong>{item.name}</strong>
-            <div>{item.category === "Party Heroes" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>
+            {item.category !== "Hot Food – Catering" && <div>{item.category === "Party Heroes" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
           </div>
         ))}
       </div>
+
+      {selectedItem?.category === 'Hot Food – Catering' && (
+        <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) { setSelectedItem(null); setEditIndex(null); } }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
+          <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
+            <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
+            <div role="radiogroup" aria-label="Select hot food size">
+              <strong style={{ display: 'block', marginBottom: 8 }}>Select Size</strong>
+              {[
+                ...(selectedItem.halfPrice != null ? [{ key: 'half', label: 'Half Tray', price: selectedItem.halfPrice }] : []),
+                ...(selectedItem.fullPrice != null ? [{ key: 'full', label: 'Full Tray', price: selectedItem.fullPrice }] : []),
+                ...(selectedItem.poundPrice != null ? [{ key: 'pound', label: 'By the Pound (1 lb)', price: selectedItem.poundPrice }] : []),
+                ...(selectedItem.dozenPrice != null ? [{ key: 'dozen', label: 'By the Dozen (12 clams)', price: selectedItem.dozenPrice }] : []),
+              ].map(opt => (
+                <label key={opt.key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: 12, marginBottom: 8, border: `2px solid ${hotFoodOption === opt.key ? '#008C45' : '#ddd'}`, borderRadius: 10, cursor: 'pointer', background: hotFoodOption === opt.key ? '#f0faf4' : '#fff' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <input type="radio" name="hotFoodOption" checked={hotFoodOption === opt.key} onChange={() => setHotFoodOption(opt.key)} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
+                    <strong>{opt.label}</strong>
+                  </span>
+                  <strong>${opt.price.toFixed(2)}</strong>
+                </label>
+              ))}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, margin: '16px 0' }}>
+              <strong>{hotFoodOption === 'pound' ? 'Pounds' : hotFoodOption === 'dozen' ? 'Dozens' : 'Quantity'}</strong>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <button type="button" onClick={() => setHeroQuantity(q => Math.max(1, q - 1))} disabled={heroQuantity === 1} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>−</button>
+                <strong>{heroQuantity}</strong>
+                <button type="button" onClick={() => setHeroQuantity(q => Math.min(99, q + 1))} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>+</button>
+              </div>
+            </div>
+            <p><strong>Total: ${((hotFoodOption === 'full' ? selectedItem.fullPrice : hotFoodOption === 'pound' ? selectedItem.poundPrice : hotFoodOption === 'dozen' ? selectedItem.dozenPrice : selectedItem.halfPrice) * heroQuantity).toFixed(2)}</strong></p>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button onClick={saveToCart} style={{ background: '#008C45', color: '#fff', border: 0, borderRadius: 7, padding: '10px 14px' }}>{editIndex === null ? 'Add' : 'Save'} {heroQuantity} to Cart</button>
+              <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '10px 14px' }}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {selectedItem?.category === 'Party Heroes' && (
         <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) setSelectedItem(null); }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
@@ -818,6 +1013,32 @@ return (
             </div>
 
 
+            {/* Selected add-ons stay visible as the ingredient categories scroll. */}
+            <div style={{ position: 'sticky', top: 0, zIndex: 5, background: '#fff', padding: '8px 0 10px', marginBottom: 8, borderBottom: '1px solid #ddd' }}>
+              <div style={{ background: '#F4F5F0', border: '1px solid #d7e9dd', borderRadius: 10, padding: '10px 12px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                  <strong>Selected Add-Ons</strong>
+                  <span style={{ fontSize: 12, color: '#555' }}>{Object.values(addonQuantities).filter(qty => qty > 0).length} selected</span>
+                </div>
+                {Object.entries(addonQuantities).filter(([, qty]) => qty > 0).length === 0 ? (
+                  <span style={{ color: '#666', fontSize: 13 }}>No add-ons selected yet.</span>
+                ) : (
+                  <div style={{ maxHeight: 160, overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}>
+                    {Object.entries(addonQuantities).filter(([, qty]) => qty > 0).map(([name, qty]) => (
+                      <div key={name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, padding: '4px 0' }}>
+                        <span style={{ fontSize: 13, flex: 1 }}>{qty}× {name}</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 7, flexShrink: 0 }}>
+                          <button type="button" aria-label={`Remove one ${name}`} onClick={() => setAddonQuantities(q => ({ ...q, [name]: Math.max(0, (q[name] || 0) - 1) }))} style={{ minWidth: 30, minHeight: 30, borderRadius: 6 }}>−</button>
+                          <strong style={{ fontSize: 13, minWidth: 14, textAlign: 'center' }}>{qty}</strong>
+                          <button type="button" aria-label={`Add one ${name}`} onClick={() => setAddonQuantities(q => ({ ...q, [name]: Math.min(99, (q[name] || 0) + 1) }))} style={{ minWidth: 30, minHeight: 30, borderRadius: 6 }}>+</button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
             <input
               type="text"
               value={addonSearch}
@@ -870,6 +1091,7 @@ return (
             <div style={{ flexShrink: 0, padding: '14px 16px', background: '#F4F5F0', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
               <strong style={{ fontSize: 18, color: '#222' }}>🛒 Your Cart</strong>
               <div style={{ display: 'flex', gap: 8 }}>
+                <button type="button" onClick={resetAllCartPrices} style={{ padding: '10px 12px', borderRadius: 8, background: '#fff', color: '#008C45', border: '1px solid #008C45', fontWeight: 600, cursor: 'pointer' }}>Reset Prices</button>
                 <button type="button" onClick={clearCart} style={{ padding: '10px 12px', borderRadius: 8, background: '#CD212A', color: '#fff', border: 'none', fontWeight: 600, cursor: 'pointer' }}>Clear Cart</button>
                 <button type="button" onClick={() => { setShowCart(false); setManualSubtotal(''); }} style={{ padding: '10px 12px', borderRadius: 8, border: '1px solid #ccc', background: '#fff', color: '#222', fontWeight: 600, cursor: 'pointer' }}>Close ✕</button>
               </div>
@@ -894,49 +1116,48 @@ return (
             {groupedCart.map((item, idx) => (
               <div key={idx} style={{ background: '#F4F5F0', padding: 12, borderRadius: 10, marginBottom: 10 }}>
                 <div>
-                  <strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''} - ${(item.price * item.quantity).toFixed(2)}
-
-                {(item.category?.includes('Hero') && item.category !== 'Party Heroes') && (
-                  <div style={{ marginTop: 8 }}>
-                    <label style={{ fontSize: 14 }}>
-                      Manual Price: $
-                      <input
-                        type="number"
-                        value={item.manualPrice ?? ''}
-                        min="0"
-                        step="0.01"
-                        onChange={(e) => {
-                          const value = e.target.value;
-                          const override = value === '' ? null : Number(value);
-                          if (override !== null && (!Number.isFinite(override) || override < 0)) return;
-                          setCart(prev => prev.map((entry, entryIndex) => {
-                            if (!item.indexes.includes(entryIndex)) return entry;
-                            const addonsTotal = (entry.addons || []).reduce(
-                              (sum, addon) => sum + addon.price * addon.qty, 0
-                            );
-                            const { manualPrice: _oldManualPrice, ...rest } = entry;
-                            return {
-                              ...rest,
-                              ...(override === null ? {} : { manualPrice: override }),
-                              total: (override === null ? entry.price : override) + addonsTotal,
-                            };
-                          }));
-                        }}
-                        style={{
-                          marginLeft: 8,
-                          width: 80,
-                          padding: 4,
-                          borderRadius: 6,
-                          border: '1px solid #ccc',
-                          fontSize: '14px',
-                        }}
-                      />
-                    </label>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 7, flexWrap: 'wrap' }}>
+                    <span style={{ whiteSpace: 'nowrap' }}><strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''}{!(item.category?.includes('Hero') && item.category !== 'Party Heroes') ? ` - $${item.total.toFixed(2)}` : ''}</span>
+                    {(item.category?.includes('Hero') && item.category !== 'Party Heroes') && (
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                        <input
+                          type="number"
+                          aria-label={`Manual price for ${item.name}`}
+                          value={item.manualPrice ?? ''}
+                          placeholder={item.price.toFixed(2)}
+                          min="0"
+                          step="0.01"
+                          onChange={(e) => updateCartManualPrice(item.indexes, e.target.value)}
+                          style={{ width: 82, height: 32, padding: '4px 6px', borderRadius: 6, border: '1px solid #ccc', fontSize: 14, boxSizing: 'border-box' }}
+                        />
+                        <button type="button" aria-label={`Decrease manual price for ${item.name} by 50 cents`}
+                          onClick={() => updateCartManualPrice(item.indexes, Math.max(0, (item.manualPrice ?? item.price) - 0.5).toFixed(2))}
+                          style={{ padding: '2px 7px', height: 30 }}>−</button>
+                        <button type="button" aria-label={`Increase manual price for ${item.name} by 50 cents`}
+                          onClick={() => updateCartManualPrice(item.indexes, ((item.manualPrice ?? item.price) + 0.5).toFixed(2))}
+                          style={{ padding: '2px 7px', height: 30 }}>+</button>
+                      </div>
+                    )}
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginLeft: 8 }}>
+                      <button type="button" aria-label={`Decrease quantity of ${item.name}`} disabled={item.quantity <= 1} onClick={() => changeCartQuantity(item.indexes, -1)} style={{ width: 34, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #ccc', background: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity <= 1 ? 0.4 : 1 }}>−</button>
+                      <select
+                        aria-label={`Quantity of ${item.name}`}
+                        value={item.quantity}
+                        onChange={e => setCartQuantity(item.indexes, e.target.value)}
+                        style={{ width: 64, height: 34, padding: '0 4px', borderRadius: 7, border: '1px solid #bbb', background: '#fff', textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}
+                      >
+                        {Array.from({ length: 99 }, (_, i) => <option key={i + 1} value={i + 1}>{i + 1}</option>)}
+                      </select>
+                      <button type="button" aria-label={`Increase quantity of ${item.name}`} disabled={item.quantity >= 99} onClick={() => changeCartQuantity(item.indexes, 1)} style={{ width: 34, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #008C45', background: '#008C45', color: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity >= 99 ? 0.4 : 1 }}>+</button>
+                    </div>
                   </div>
-                )}
-
-                  <button onClick={() => { setShowCart(false); openCustomization(cart[item.indexes[0]], item.indexes[0]); }} style={{ marginLeft: 10 }}>Edit</button>
-                  <button onClick={() => setCart(prev => prev.filter((_, i) => !item.indexes.includes(i)))} style={{ marginLeft: 10, color: '#CD212A' }}>Remove</button>
+                  <div style={{ display: 'flex', gap: 8, marginTop: 7 }}>
+                  <button onClick={() => { setShowCart(false); openCustomization(cart[item.indexes[0]], item.indexes[0]); }} style={{ fontSize: 13, padding: '4px 8px' }}>Edit</button>
+                  <button onClick={() => setCart(prev => prev.filter((_, i) => !item.indexes.includes(i)))} style={{ fontSize: 13, padding: '4px 8px', color: '#CD212A' }}>Remove</button>
+                  {(item.category?.includes('Hero') && item.category !== 'Party Heroes') && (
+                    <button type="button" aria-label={`Reset price for ${item.name}`} onClick={() => resetCartItemPrice(item.indexes)} disabled={item.manualPrice === undefined} style={{ fontSize: 13, padding: '4px 8px', color: '#008C45', opacity: item.manualPrice === undefined ? 0.5 : 1 }}>Reset</button>
+                  )}
+                  </div>
                 </div>
                 <ul>
                   {item.addons && item.addons.map((addon, i) => (
@@ -949,7 +1170,7 @@ return (
               </div>
             ))}
 
-            <div style={{ marginTop: 20 }}>
+            <div style={{ marginTop: 20, fontSize: 14, lineHeight: 1.45 }}>
               
               
               
@@ -960,7 +1181,7 @@ return (
                   value={manualSubtotal}
                   onChange={(e) => setManualSubtotal(e.target.value)}
                   placeholder={rawSubtotal.toFixed(2)}
-                  style={{ marginLeft: 8, width: 100, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '16px' }}
+                  style={{ marginLeft: 8, width: 100, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '14px' }}
                 />
                 <button onClick={() => {
                   const base = parseFloat(manualSubtotal || rawSubtotal.toFixed(2));
@@ -974,29 +1195,28 @@ return (
 
 
 
-              <label style={{ display: 'block', marginBottom: 8 }}>
-                Tip: $
-                <input
-                  type="number"
-                  value={customTip}
-                  onChange={(e) => setCustomTip(e.target.value)}
-                  style={{ marginLeft: 8, width: 80, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '16px' }}
-                />
-              </label>
-              <label style={{ display: 'block', marginBottom: 8 }}>
-                Delivery Fee: $
-                <input
-                  type="number"
-                  min="0"
-                  step="0.01"
-                  value={deliveryFee}
-                  onChange={(e) => setDeliveryFee(e.target.value)}
-                  style={{ marginLeft: 8, width: 80, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '16px' }}
-                />
-              </label>
-              <p>Subtotal: ${subtotal.toFixed(2)}</p>
-              <p>Tip: ${tip.toFixed(2)}</p>
-              <p>Delivery Fee: ${delivery.toFixed(2)}</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'nowrap', marginBottom: 8 }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 14 }}>
+                  Tip: $
+                  <input
+                    type="number"
+                    value={customTip}
+                    onChange={(e) => setCustomTip(e.target.value)}
+                    style={{ width: 64, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '14px', minWidth: 0 }}
+                  />
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 14 }}>
+                  Delivery Fee: $
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={deliveryFee}
+                    onChange={(e) => setDeliveryFee(e.target.value)}
+                    style={{ width: 64, padding: 6, borderRadius: 6, border: '1px solid #ccc', fontSize: '14px', minWidth: 0 }}
+                  />
+                </label>
+              </div>
               <p>Subtotal with Tip &amp; Delivery Fee: ${subtotalWithTipAndDelivery.toFixed(2)}</p>
               <p>Sales Tax ({taxExempt ? 'Exempt' : '8.875%'}): ${tax.toFixed(2)}</p>
               <p>Subtotal with Tax: ${subtotalWithTax.toFixed(2)}</p>
