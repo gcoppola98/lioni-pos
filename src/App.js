@@ -203,8 +203,7 @@ const items = [
   { id: 'bread5', name: 'Seeded Twist', price: 3.0, category: 'Bread Items' },
   { id: 'bread6', name: 'Olive Bread', price: 6.0, category: 'Bread Items' },
   { id: 'bread7', name: 'Prosciutto Bread', price: 10.0, category: 'Bread Items' },
-  { id: 'bread8', name: 'Focaccia - Small', price: 3.75, category: 'Bread Items' },
-  { id: 'bread9', name: 'Focaccia - Large', price: 5.75, category: 'Bread Items' },
+  { id: 'bread8', name: 'Focaccia', price: 3.75, smallPrice: 3.75, largePrice: 5.75, category: 'Bread Items' },
 
   { id: 'dessert1', name: 'Sorbets', price: 7.5, category: 'Desserts' },
   { id: 'dessert2', name: 'Dessert Cups', price: 4.79, category: 'Desserts' },
@@ -401,21 +400,31 @@ const items = [
   { id: "PH_157", name: "#10A", pricePerFoot: 26, category: "Party Heroes – Catering", description: "Lioni Smoked Mozzarella, Lioni Fresh Mozzarella, Arugula, Olive Oil, Lettuce, Salt Pepper And Oregano" },
   { id: "PH_158", name: "#11A", pricePerFoot: 30, category: "Party Heroes – Catering", description: "Lioni Smoked Mozaarella, Fried Eggplant, Roasted Peppers, Olive Oil, Balsamic Vinegar, Oregano, Salt And Pepper" },
 
-  {"id": "UA_1", "name": "1/2 Baked Ziti", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
-  {"id": "UA_2", "name": "1/2 Caesar Salad", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
-  {"id": "UA_3", "name": "1/2 Cavatelli & Broccoli", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_4", "name": "1/2 Chicken Francese", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_5", "name": "1/2 Chicken Marsala", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_6", "name": "1/2 Chicken Parm", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_7", "name": "1/2 Eggplant Parm", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
-  {"id": "UA_8", "name": "1/2 Eggplant Rollatini", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_9", "name": "1/2 Meatballs (Sauce)", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_10", "name": "1/2 Penne Vodka", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
-  {"id": "UA_11", "name": "1/2 Sausage & Peppers", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
-  {"id": "UA_12", "name": "1/2 Stuffed Shells", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
-  {"id": "UA_13", "name": "1/2 Tossed Salad", "category": "Urban Air – Catering", "price": 25, "fixedPrice": 25},
+
+  { id: "ML_1", name: "American", category: "Melody Lanes – Catering", smallPrice: 40, largePrice: 57, price: 40 },
+  { id: "ML_2", name: "Italian", category: "Melody Lanes – Catering", smallPrice: 40, largePrice: 57, price: 40 },
+  { id: "ML_3", name: "Basic", category: "Melody Lanes – Catering", smallPrice: 40, largePrice: 57, price: 40 },
+  { id: "ML_4", name: "Grilled Veggies", category: "Melody Lanes – Catering", smallPrice: 40, largePrice: 57, price: 40 },
+  { id: "ML_5", name: "Classic", category: "Melody Lanes – Catering", smallPrice: 43, largePrice: 63, price: 43 },
+  { id: "ML_6", name: "Grilled Classic", category: "Melody Lanes – Catering", smallPrice: 43, largePrice: 63, price: 43 },
+  { id: "ML_7", name: "Eggplant Classic", category: "Melody Lanes – Catering", smallPrice: 43, largePrice: 63, price: 43 },
+  { id: "ML_8", name: "GVD", category: "Melody Lanes – Catering", smallPrice: 43, largePrice: 63, price: 43 },
+
+  {"id": "UA_15", "name": "6 Heroes/Cut in 4/Tray", "category": "Urban Air – Catering", "price": 105, "heroPackage": true},
+  {"id": "UA_1", "name": "1/2 Tray Baked Ziti", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
+  {"id": "UA_2", "name": "1/2 Tray Caesar Salad", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
+  {"id": "UA_3", "name": "1/2 Tray Cavatelli & Broccoli", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_4", "name": "1/2 Tray Chicken Francese", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_5", "name": "1/2 Tray Chicken Marsala", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_6", "name": "1/2 Tray Chicken Parm", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_7", "name": "1/2 Tray Eggplant Parm", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
+  {"id": "UA_8", "name": "1/2 Tray Eggplant Rollatini", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_9", "name": "1/2 Tray Meatballs (Sauce)", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_10", "name": "1/2 Tray Penne Vodka", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
+  {"id": "UA_11", "name": "1/2 Tray Sausage & Peppers", "category": "Urban Air – Catering", "price": 65, "fixedPrice": 65},
+  {"id": "UA_12", "name": "1/2 Tray Stuffed Shells", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
+  {"id": "UA_13", "name": "1/2 Tray Tossed Salad", "category": "Urban Air – Catering", "price": 25, "fixedPrice": 25},
   {"id": "UA_14", "name": "Bruschetta Platter", "category": "Urban Air – Catering", "price": 50, "fixedPrice": 50},
-  {"id": "UA_15", "name": "6 Heroes Cut in 4 / Tray", "category": "Urban Air – Catering", "price": 105, "heroPackage": true},
   {"id": "SAL_1", "name": "Tossed Salad", "category": "Salads – Catering", "price": 25, "halfPrice": 25, "fullPrice": 40, "deepPrice": 65},
   {"id": "SAL_2", "name": "Caesar Salad", "category": "Salads – Catering", "price": 50, "halfPrice": 50, "fullPrice": 75, "deepPrice": 125},
   {"id": "SAL_3", "name": "Tri Color Pasta Salad", "category": "Salads – Catering", "price": 50, "halfPrice": 50, "fullPrice": 95, "deepPrice": 140},
@@ -594,10 +603,11 @@ const specialCustomAddons = [
   { name: 'Just Proscuitto or Veal (No Cheese)', price: 16 },
 ];
 
-const categories = ['All', 'Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes', 'Chips', 'Bread Items', 'Appetizers', "Kid's Menu", 'Beverages', 'Desserts', 'Grocery Items', 'Milk', 'Party Heroes – Catering', 'Hot Food – Catering', 'Platters – Catering', 'Salads – Catering', 'Breakfast – Catering', 'Urban Air – Catering'];
+const categories = ['All', 'Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes', 'Chips', 'Bread Items', 'Appetizers', "Kid's Menu", 'Beverages', 'Desserts', 'Grocery Items', 'Milk', 'Party Heroes – Catering', 'Hot Food – Catering', 'Platters – Catering', 'Salads – Catering', 'Breakfast – Catering', 'Urban Air – Catering', 'Melody Lanes – Catering'];
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [melodySize, setMelodySize] = useState('2');
   const [urbanHeroOption, setUrbanHeroOption] = useState('Regular / No Tuna');
   const [partyHeroFeet, setPartyHeroFeet] = useState(2);
   const [hotFoodOption, setHotFoodOption] = useState('half');
@@ -696,6 +706,12 @@ function App() {
   
   function openCustomization(item, index = null) {
     setHeroQuantity(1);
+    if (item.category === 'Melody Lanes – Catering') {
+      setSelectedItem(item);
+      setEditIndex(index);
+      setMelodySize(item.melodySize || '2');
+      return;
+    }
     if (item.category === 'Urban Air – Catering') {
       if (!item.heroPackage && index === null) {
         setCart(prev => [...prev, { ...item, total: item.price, addons: [] }]);
@@ -714,6 +730,12 @@ function App() {
       setSelectedItem(item);
       setEditIndex(index);
       setCateringOption(item.cateringOption || (item.coffeePrices ? '15' : item.personPrice != null ? 'person' : item.poundPrice != null ? 'pound' : 'half'));
+      return;
+    }
+    if (item.id === 'bread8') {
+      setSelectedItem(item);
+      setEditIndex(index);
+      setPlatterOption(item.platterOption || 'small');
       return;
     }
     if (item.category === "Platters – Catering") {
@@ -759,8 +781,24 @@ function App() {
 
 
   function saveToCart() {
+    if (selectedItem.category === 'Melody Lanes – Catering') {
+      const price = melodySize === '3' ? selectedItem.largePrice : selectedItem.smallPrice;
+      const item = { ...selectedItem, melodySize, price, total: price, addons: [], name: `${selectedItem.name} (${melodySize}FT)` };
+      setCart(prev => {
+        const copies = Array.from({ length: heroQuantity }, () => ({ ...item }));
+        if (editIndex === null) return [...prev, ...copies];
+        const updated = [...prev];
+        updated.splice(editIndex, 1, ...copies);
+        return updated;
+      });
+      setSelectedItem(null);
+      setEditIndex(null);
+      setHeroQuantity(1);
+      return;
+    }
+
     if (selectedItem.category === 'Urban Air – Catering') {
-      const urbanItem = { ...selectedItem, urbanHeroOption, price: 105, total: 105, addons: [], name: `6 Heroes Cut in 4 / Tray (${urbanHeroOption})` };
+      const urbanItem = { ...selectedItem, urbanHeroOption, price: 105, total: 105, addons: [], name: `6 Heroes/Cut in 4/Tray (${urbanHeroOption})` };
       setCart(prev => {
         const copies = Array.from({ length: heroQuantity }, () => ({ ...urbanItem }));
         if (editIndex === null) return [...prev, ...copies];
@@ -793,7 +831,7 @@ function App() {
       setHeroQuantity(1);
       return;
     }
-    if (selectedItem.category === "Platters – Catering") {
+    if (selectedItem.category === "Platters – Catering" || selectedItem.id === "bread8") {
       const price = platterOption === 'large' ? selectedItem.largePrice : platterOption === 'person' ? selectedItem.personPrice : platterOption === 'fixed' ? selectedItem.fixedPrice : selectedItem.smallPrice;
       const sizeLabel = platterOption === 'large' ? 'Large' : platterOption === 'small' ? 'Small' : platterOption === 'person' ? 'Per Person' : null;
       const platterItem = { ...selectedItem, platterOption, price, total: price, addons: [], name: sizeLabel ? `${selectedItem.name} (${sizeLabel})` : selectedItem.name };
@@ -894,7 +932,9 @@ function App() {
   // Urban Air is always tax-exempt, even when the global tax-exempt switch is off.
   // For mixed carts, only non-Urban Air items are taxable. Delivery/tip on
   // Urban Air-only orders also remain tax-exempt.
-  const nonUrbanSubtotal = Math.max(0, subtotal - urbanAirSubtotal);
+  const melodySubtotal = cart.reduce((sum, item) => sum + (item.category === 'Melody Lanes – Catering' ? item.total : 0), 0);
+  const nonUrbanSubtotal = Math.max(0, subtotal - urbanAirSubtotal - melodySubtotal);
+  const exemptOnly = cart.length > 0 && cart.every(item => ['Urban Air – Catering', 'Melody Lanes – Catering'].includes(item.category));
   const taxableSubtotal = nonUrbanSubtotal > 0 ? nonUrbanSubtotal + tip + delivery : 0;
   const tax = taxExempt ? 0 : taxableSubtotal * 0.08875;
   const subtotalWithTax = subtotalWithTipAndDelivery + tax;
@@ -1052,6 +1092,7 @@ return (
         ))}
       </div>
 
+      {activeCategory === 'Melody Lanes – Catering' && <p style={{ margin: '0 0 12px', fontWeight: 600 }}>Always tax exempt · No service fee · Delivery fee when applicable</p>}
       {activeCategory === 'Urban Air – Catering' && <p style={{ margin: '0 0 12px', fontWeight: 600 }}>Always 10% off Urban Air items · Always tax exempt · No service fee · $15 delivery fee when delivery applies</p>}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 100px), 1fr))', gap: 12 }}>
         {filteredItems.map(item => (
@@ -1061,15 +1102,47 @@ return (
             onClick={() => openCustomization(item)}
           >
             <strong>{item.name}</strong>
-            {((!["Hot Food – Catering", "Platters – Catering", "Salads – Catering", "Breakfast – Catering"].includes(item.category)) || item.fixedPrice != null) && <div>{item.category === "Party Heroes – Catering" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
+            {((!["Hot Food – Catering", "Platters – Catering", "Salads – Catering", "Breakfast – Catering", "Melody Lanes – Catering"].includes(item.category) && item.id !== "bread8") || item.fixedPrice != null) && <div>{item.category === "Party Heroes – Catering" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
           </div>
         ))}
       </div>
 
+      {selectedItem?.category === 'Melody Lanes – Catering' && (
+        <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) { setSelectedItem(null); setEditIndex(null); } }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
+          <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxSizing: 'border-box' }}>
+            <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, margin: '16px 0', flexWrap: 'wrap' }}>
+              <strong>Quantity</strong>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <button type="button" onClick={() => setHeroQuantity(q => Math.max(1, q - 1))} disabled={heroQuantity === 1} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>−</button>
+                <strong style={{ minWidth: 24, textAlign: 'center' }}>{heroQuantity}</strong>
+                <button type="button" onClick={() => setHeroQuantity(q => Math.min(99, q + 1))} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>+</button>
+              </div>
+            </div>
+            <div role="radiogroup" aria-label="Select hero size" style={{ marginTop: 14 }}>
+              <strong style={{ display: 'block', marginBottom: 8 }}>Select Hero Size</strong>
+              {[{ feet: 2, price: selectedItem.smallPrice }, { feet: 3, price: selectedItem.largePrice }].map(option => (
+                <label key={option.feet} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '12px', marginBottom: 8, border: `2px solid ${melodySize === String(option.feet) ? '#008C45' : '#ddd'}`, borderRadius: 10, cursor: 'pointer', background: melodySize === String(option.feet) ? '#f0faf4' : '#fff' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <input type="radio" name="melodySize" value={option.feet} checked={melodySize === String(option.feet)} onChange={() => setMelodySize(String(option.feet))} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
+                    <strong>{option.feet} Foot Hero</strong>
+                  </span>
+                  <strong>${option.price.toFixed(2)}</strong>
+                </label>
+              ))}
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button onClick={saveToCart} style={{ background: '#008C45', color: 'white', border: 0, borderRadius: 7, padding: '9px 14px' }}>{editIndex === null ? `Add ${heroQuantity} to Cart` : `Save ${heroQuantity} to Cart`}</button>
+              <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '9px 14px' }}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {selectedItem?.category === 'Urban Air – Catering' && (
         <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) { setSelectedItem(null); setEditIndex(null); } }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
           <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, maxHeight: '85vh', overflowY: 'auto' }}>
-            <h2 style={{ marginTop: 0 }}>6 Heroes Cut in 4 / Tray</h2>
+            <h2 style={{ marginTop: 0 }}>6 Heroes/Cut in 4/Tray</h2>
             <p>Package price: $105.00 before Urban Air 10% discount</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
               <strong>Quantity</strong>
@@ -1077,7 +1150,7 @@ return (
               <strong>{heroQuantity}</strong>
               <button onClick={() => setHeroQuantity(q => Math.min(99, q + 1))}>+</button>
             </div>
-            <label htmlFor="urban-hero-option" style={{ display: 'block', fontWeight: 700, marginBottom: 6 }}>Hero assortment</label>
+            <label htmlFor="urban-hero-option" style={{ display: 'block', fontWeight: 700, marginBottom: 6 }}>Hero Assortment</label>
             <select id="urban-hero-option" value={urbanHeroOption} onChange={e => setUrbanHeroOption(e.target.value)} style={{ width: '100%', boxSizing: 'border-box', padding: 10, fontSize: 16, borderRadius: 8, marginBottom: 10 }}>
               {['Regular / No Tuna', 'Italian', 'Turkey', 'Italian / Tuna / Turkey', 'Italian / Turkey, Ham & Cheese', 'Italian & Turkey'].map(option => <option key={option} value={option}>{option}</option>)}
             </select>
@@ -1131,7 +1204,7 @@ return (
         </div>
       )}
 
-      {selectedItem?.category === 'Platters – Catering' && (
+      {(selectedItem?.category === 'Platters – Catering' || selectedItem?.id === 'bread8') && (
         <div className="lioni-overlay" onClick={(e) => { if (e.target === e.currentTarget) { setSelectedItem(null); setEditIndex(null); } }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
           <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
             <h2 style={{ marginTop: 0 }}>Customize {selectedItem.name}</h2>
@@ -1366,9 +1439,9 @@ return (
                 {taxExempt ? '✓ Exempt ON' : 'Exempt OFF'}
               </button>
             </div>
-            <div style={{ padding: 20, overflowY: 'auto', minHeight: 0, flex: 1, overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
+            <div style={{ padding: '16px 0', overflowY: 'auto', minHeight: 0, flex: 1, overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}>
             {groupedCart.map((item, idx) => (
-              <div key={idx} style={{ background: '#F4F5F0', padding: 12, borderRadius: 10, marginBottom: 10 }}>
+              <div key={idx} style={{ background: '#F4F5F0', padding: 16, width: '100%', boxSizing: 'border-box', borderRadius: 0, marginBottom: 10 }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'nowrap', overflowX: 'auto', maxWidth: '100%', WebkitOverflowScrolling: 'touch', paddingBottom: 2 }}>
                     <span style={{ whiteSpace: 'nowrap', flexShrink: 0, fontSize: 14 }}><strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''}{!(item.category?.includes('Hero') && item.category !== 'Party Heroes – Catering') ? ` - $${item.total.toFixed(2)}` : ''}</span>
@@ -1424,7 +1497,7 @@ return (
               </div>
             ))}
 
-            <div style={{ marginTop: 20, fontSize: 14, lineHeight: 1.45 }}>
+            <div style={{ marginTop: 20, padding: 16, width: '100%', boxSizing: 'border-box', background: '#F4F5F0', fontSize: 14, lineHeight: 1.45, overflowWrap: 'anywhere' }}>
               
               
               
@@ -1474,9 +1547,9 @@ return (
               {urbanAirSubtotal > 0 && <p>Urban Air Discount (10%): −${urbanAirDiscount.toFixed(2)}</p>}
               {urbanAirSubtotal > 0 && <p>Subtotal After Discount: ${subtotalAfterDiscount.toFixed(2)}</p>}
               <p>Subtotal with Tip &amp; Delivery Fee: ${subtotalWithTipAndDelivery.toFixed(2)}</p>
-              <p>Sales Tax ({taxExempt || (urbanAirSubtotal > 0 && nonUrbanSubtotal === 0) ? 'Exempt' : urbanAirSubtotal > 0 ? '8.875% on non-Urban Air items only' : '8.875%'}): ${tax.toFixed(2)}</p>
-              <p>{urbanAirSubtotal > 0 && nonUrbanSubtotal === 0 ? 'Subtotal with Tax: N/A' : `Subtotal with Tax: $${subtotalWithTax.toFixed(2)}`}</p>
-              <p>Service Fee ({urbanAirSubtotal > 0 && nonUrbanSubtotal === 0 ? 'N/A' : urbanAirSubtotal > 0 ? '3.95% on non-Urban Air items only' : '3.95%'}): ${serviceFee.toFixed(2)}</p>
+              <p>{exemptOnly ? 'Sales Tax (8.875%): Exempt' : `Sales Tax (${taxExempt ? 'Exempt' : urbanAirSubtotal > 0 || melodySubtotal > 0 ? '8.875% on non-exempt items only' : '8.875%'}): $${tax.toFixed(2)}`}</p>
+              {!exemptOnly && <p>Subtotal with Tax: ${subtotalWithTax.toFixed(2)}</p>}
+              <p>{exemptOnly ? 'Service Fee (3.95%): N/A' : `Service Fee (${urbanAirSubtotal > 0 || melodySubtotal > 0 ? '3.95% on non-exempt items only' : '3.95%'}): $${serviceFee.toFixed(2)}`}</p>
               <p><strong>Final Total: ${finalTotal.toFixed(2)}</strong></p>
             </div>
 
