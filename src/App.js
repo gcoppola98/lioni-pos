@@ -1116,10 +1116,10 @@ return (
             {groupedCart.map((item, idx) => (
               <div key={idx} style={{ background: '#F4F5F0', padding: 12, borderRadius: 10, marginBottom: 10 }}>
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 7, flexWrap: 'wrap' }}>
-                    <span style={{ whiteSpace: 'nowrap' }}><strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''}{!(item.category?.includes('Hero') && item.category !== 'Party Heroes') ? ` - $${item.total.toFixed(2)}` : ''}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'nowrap', overflowX: 'auto', maxWidth: '100%', WebkitOverflowScrolling: 'touch', paddingBottom: 2 }}>
+                    <span style={{ whiteSpace: 'nowrap', flexShrink: 0, fontSize: 14 }}><strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''}{!(item.category?.includes('Hero') && item.category !== 'Party Heroes') ? ` - $${item.total.toFixed(2)}` : ''}</span>
                     {(item.category?.includes('Hero') && item.category !== 'Party Heroes') && (
-                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
                         <input
                           type="number"
                           aria-label={`Manual price for ${item.name}`}
@@ -1128,27 +1128,27 @@ return (
                           min="0"
                           step="0.01"
                           onChange={(e) => updateCartManualPrice(item.indexes, e.target.value)}
-                          style={{ width: 82, height: 32, padding: '4px 6px', borderRadius: 6, border: '1px solid #ccc', fontSize: 14, boxSizing: 'border-box' }}
+                          style={{ width: 64, height: 32, padding: '4px 4px', borderRadius: 6, border: '1px solid #ccc', fontSize: 14, boxSizing: 'border-box' }}
                         />
                         <button type="button" aria-label={`Decrease manual price for ${item.name} by 50 cents`}
                           onClick={() => updateCartManualPrice(item.indexes, Math.max(0, (item.manualPrice ?? item.price) - 0.5).toFixed(2))}
-                          style={{ padding: '2px 7px', height: 30 }}>−</button>
+                          style={{ padding: '2px 5px', height: 30, minWidth: 25 }}>−</button>
                         <button type="button" aria-label={`Increase manual price for ${item.name} by 50 cents`}
                           onClick={() => updateCartManualPrice(item.indexes, ((item.manualPrice ?? item.price) + 0.5).toFixed(2))}
-                          style={{ padding: '2px 7px', height: 30 }}>+</button>
+                          style={{ padding: '2px 5px', height: 30, minWidth: 25 }}>+</button>
                       </div>
                     )}
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, marginLeft: 8 }}>
-                      <button type="button" aria-label={`Decrease quantity of ${item.name}`} disabled={item.quantity <= 1} onClick={() => changeCartQuantity(item.indexes, -1)} style={{ width: 34, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #ccc', background: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity <= 1 ? 0.4 : 1 }}>−</button>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 3, marginLeft: 2, flexShrink: 0 }}>
+                      <button type="button" aria-label={`Decrease quantity of ${item.name}`} disabled={item.quantity <= 1} onClick={() => changeCartQuantity(item.indexes, -1)} style={{ width: 30, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #ccc', background: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity <= 1 ? 0.4 : 1 }}>−</button>
                       <select
                         aria-label={`Quantity of ${item.name}`}
                         value={item.quantity}
                         onChange={e => setCartQuantity(item.indexes, e.target.value)}
-                        style={{ width: 64, height: 34, padding: '0 4px', borderRadius: 7, border: '1px solid #bbb', background: '#fff', textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}
+                        style={{ width: 54, height: 34, padding: '0 2px', borderRadius: 7, border: '1px solid #bbb', background: '#fff', textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}
                       >
                         {Array.from({ length: 99 }, (_, i) => <option key={i + 1} value={i + 1}>{i + 1}</option>)}
                       </select>
-                      <button type="button" aria-label={`Increase quantity of ${item.name}`} disabled={item.quantity >= 99} onClick={() => changeCartQuantity(item.indexes, 1)} style={{ width: 34, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #008C45', background: '#008C45', color: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity >= 99 ? 0.4 : 1 }}>+</button>
+                      <button type="button" aria-label={`Increase quantity of ${item.name}`} disabled={item.quantity >= 99} onClick={() => changeCartQuantity(item.indexes, 1)} style={{ width: 30, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #008C45', background: '#008C45', color: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity >= 99 ? 0.4 : 1 }}>+</button>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: 8, marginTop: 7 }}>
