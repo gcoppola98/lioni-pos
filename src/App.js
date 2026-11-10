@@ -175,6 +175,7 @@ const items = [
   { id: 'A14', name: 'Macaroni Salad', price: 3, smallPrice: 3, largePrice: 6, appetizerSize: true, category: 'Appetizers' },
   { id: 'A16', name: 'Coleslaw', price: 3, smallPrice: 3, largePrice: 6, appetizerSize: true, category: 'Appetizers' },
 
+  { id: "B_WATER", name: "Water", price: 1.50, category: "Beverages", waterSizes: [{ label: "16oz", price: 1.50 }, { label: "Sport Cap", price: 2.00 }, { label: "1 Liter", price: 2.50 }, { label: "1.5 Liter", price: 3.00 }, { label: "Gallon", price: 3.50 }] },
   { id: "B1", name: "20oz Soda", price: 3.0, category: "Beverages" },
   { id: "B2", name: "2 Liter Soda", price: 5.0, category: "Beverages" },
   { id: "B3", name: "12oz. Boylan", price: 3.0, category: "Beverages" },
@@ -185,22 +186,22 @@ const items = [
   { id: "B8", name: "Gatorade", price: 3.0, category: "Beverages" },
   { id: "B9", name: "Vitamin Water", price: 3.0, category: "Beverages" },
 
-  { id: "C1", name: "Hals", price: 2.0, category: "Chips" },
-  { id: "C2", name: "Small Wise", price: 2.5, category: "Chips" },
-  { id: "C3", name: "Large Wise", price: 4.79, category: "Chips" },
+  { id: "C1", name: "Hals", price: 2.5, category: "Chips" },
+  { id: "C2", name: "Small Wise", price: 3.0, category: "Chips" },
+  { id: "C3", name: "Large Wise", price: 6.0, category: "Chips" },
 
   { id: "K1", name: "Kid's Chicken Fingers", price: 5.0, category: "Kid's Menu" },
   { id: "K2", name: "Kid's Pasta", price: 5.0, category: "Kid's Menu" },
   { id: "K3", name: "Kid's Sandwich", price: 5.0, category: "Kid's Menu" },
 
-  { id: 'bread1', name: 'Italian Bread', price: 1.5, category: 'Bread Items' },
-  { id: 'bread2', name: 'Hero Bread', price: 1.5, category: 'Bread Items' },
+  { id: 'bread1', name: 'Italian Bread', price: 1.75, category: 'Bread Items' },
+  { id: 'bread2', name: 'Hero Bread', price: 2.0, category: 'Bread Items' },
   { id: 'bread3', name: 'Seeded Semolina Bread Loaf', price: 4.0, category: 'Bread Items' },
   { id: 'bread4', name: 'Ciabatta Bread', price: 4.0, category: 'Bread Items' },
-  { id: 'bread5', name: 'Seeded Twist', price: 3.0, category: 'Bread Items' },
-  { id: 'bread6', name: 'Olive Bread', price: 6.0, category: 'Bread Items' },
-  { id: 'bread7', name: 'Prosciutto Bread', price: 10.0, category: 'Bread Items' },
-  { id: 'bread8', name: 'Focaccia', price: 3.75, smallPrice: 3.75, largePrice: 5.75, category: 'Bread Items' },
+  { id: 'bread5', name: 'Seeded Twist', price: 4.0, category: 'Bread Items' },
+  { id: 'bread6', name: 'Olive Bread', price: 7.0, category: 'Bread Items' },
+  { id: 'bread7', name: 'Prosciutto Bread', price: 12.0, category: 'Bread Items' },
+  { id: 'bread8', name: 'Focaccia', price: 3.75, smallPrice: 4.00, largePrice: 6.00, category: 'Bread Items' },
 
   { id: 'dessert1', name: 'Sorbets', price: 7.5, category: 'Desserts' },
   { id: 'dessert2', name: 'Dessert Cups', price: 4.79, category: 'Desserts' },
@@ -222,10 +223,10 @@ const items = [
   { id: 'grocery2', name: '3 for $17 Mozzarella', price: 17.0, category: 'Grocery Items' },
   { id: 'grocery3', name: '8oz Smoked Mozzarella', price: 3.75, category: 'Grocery Items' },
   { id: 'grocery4', name: 'Smoked Mozzarella', price: 7.0, category: 'Grocery Items' },
-  { id: 'grocery5', name: '8oz Regular Ciliegine', price: 4.39, category: 'Grocery Items' },
-  { id: 'grocery6', name: '8oz Marinated Ciliegine', price: 5.0, category: 'Grocery Items' },
-  { id: 'grocery7', name: '8oz Burrata Mozzarella', price: 6.0, category: 'Grocery Items' },
-  { id: 'grocery8', name: '8oz Bufala Mozzarella', price: 6.0, category: 'Grocery Items' },
+  { id: 'grocery5', name: '8oz Regular Ciliegine', price: 5.0, category: 'Grocery Items' },
+  { id: 'grocery6', name: '8oz Marinated Ciliegine', price: 6.0, category: 'Grocery Items' },
+  { id: 'grocery7', name: '8oz Burrata Mozzarella', price: 7.0, category: 'Grocery Items' },
+  { id: 'grocery8', name: '8oz Bufala Mozzarella', price: 7.0, category: 'Grocery Items' },
   { id: 'grocery9', name: '8oz Locatelli', price: 9.39, category: 'Grocery Items' },
   { id: 'grocery10', name: '16oz Locatelli', price: 18.0, category: 'Grocery Items' },
   { id: 'grocery11', name: 'Pizza Dough', price: 2.0, category: 'Grocery Items' },
@@ -592,11 +593,11 @@ const specialCustomAddons = [
   { name: 'Grilled Chicken & Mozzarella', price: 16 },
   { name: 'Eggplant & Cheese', price: 14 },
   { name: 'Eggplant & Mozzarella', price: 15 },
-  { name: 'Prosciutto or Veal & Cheese', price: 18 },
-  { name: 'Prosciutto or Veal & Mozzarella', price: 19 },
-  { name: 'Just Tuna (No Cheese)', price: 12 },
-  { name: 'Just Grilled Veggies (No Cheese)', price: 12 },
-  { name: 'Just Meat (No Cheese)', price: 13 },
+  { name: 'Prosciutto or Veal & Cheese', price: 20 },
+  { name: 'Prosciutto or Veal & Mozzarella', price: 24 },
+  { name: 'Just Tuna (No Cheese)', price: 13 },
+  { name: 'Just Grilled Veggies (No Cheese)', price: 13 },
+  { name: 'Just Meat (No Cheese)', price: 14 },
   { name: 'Just Proscuitto or Veal (No Cheese)', price: 16 },
 ];
 
@@ -612,6 +613,7 @@ function App() {
   const [partyHeroPan, setPartyHeroPan] = useState(false);
   const [hotFoodOption, setHotFoodOption] = useState('half');
   const [platterOption, setPlatterOption] = useState('small');
+  const [waterSize, setWaterSize] = useState('16oz');
   const [cateringOption, setCateringOption] = useState('half');
   const [heroQuantity, setHeroQuantity] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
@@ -626,6 +628,8 @@ function App() {
   const [expandedAddonCategories, setExpandedAddonCategories] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [addonSearch, setAddonSearch] = useState("");
+  const [customItemText, setCustomItemText] = useState('');
+  const [customItemPrice, setCustomItemPrice] = useState('');
 
   // Keep the menu stationary while the cart is open (including iPhone Safari).
   useEffect(() => {
@@ -656,11 +660,11 @@ function App() {
 
 
   const heroCategories = ['Regular Heroes', 'Smoked Mozzarella Heroes', '"P" Heroes'];
-  const isHeroItem = (item) => heroCategories.includes(item.category) || item.name === 'Custom';
+  const isHeroItem = (item) => heroCategories.includes(item.category) || item.id === '#22';
 
   const getAvailableAddons = (item) => {
     if (!isHeroItem(item)) return [];
-    const customOptions = item.name === 'Custom'
+    const customOptions = item.id === '#22'
       ? [{
           title: 'Special Custom Addons',
           options: [
@@ -672,11 +676,11 @@ function App() {
             { name: 'Grilled Chicken & Mozzarella', price: 16 },
             { name: 'Eggplant & Cheese', price: 14 },
             { name: 'Eggplant & Mozzarella', price: 15 },
-            { name: 'Prosciutto or Veal & Cheese', price: 18 },
-            { name: 'Prosciutto or Veal & Mozzarella', price: 19 },
-            { name: 'Just Tuna (No Cheese)', price: 12 },
-            { name: 'Just Grilled Veggies (No Cheese)', price: 12 },
-            { name: 'Just Meat (No Cheese)', price: 13 },
+            { name: 'Prosciutto or Veal & Cheese', price: 20 },
+            { name: 'Prosciutto or Veal & Mozzarella', price: 24 },
+            { name: 'Just Tuna (No Cheese)', price: 13 },
+            { name: 'Just Grilled Veggies (No Cheese)', price: 13 },
+            { name: 'Just Meat (No Cheese)', price: 14 },
             { name: 'Just Proscuitto or Veal (No Cheese)', price: 16 },
           ]
         }]
@@ -732,6 +736,12 @@ function App() {
       setCateringOption(item.cateringOption || (item.coffeePrices ? '15' : item.personPrice != null ? 'person' : item.poundPrice != null ? 'pound' : 'half'));
       return;
     }
+    if (item.waterSizes) {
+      setSelectedItem(item);
+      setEditIndex(index);
+      setWaterSize(item.waterSize || '16oz');
+      return;
+    }
     if (item.id === 'bread8' || item.appetizerSize) {
       setSelectedItem(item);
       setEditIndex(index);
@@ -779,6 +789,8 @@ function App() {
     }
     setSelectedItem(item);
     setEditIndex(index);
+    setCustomItemText(item.id === '#22' ? (item.customItemText || '') : '');
+    setCustomItemPrice(item.id === '#22' ? (item.price ? String(item.price) : '') : '');
     const initialQuantities = index !== null ? Object.fromEntries(item.addons?.map(a => [a.name, a.qty]) || []) : {};
     setAddonQuantities(initialQuantities);
   }
@@ -825,6 +837,21 @@ function App() {
       const cartItem = { ...selectedItem, cateringOption, price, total: price, addons: [], name: suffix ? `${selectedItem.name} (${suffix})` : selectedItem.name };
       setCart(prev => {
         const copies = Array.from({ length: heroQuantity }, () => ({ ...cartItem }));
+        if (editIndex === null) return [...prev, ...copies];
+        const updated = [...prev];
+        updated.splice(editIndex, 1, ...copies);
+        return updated;
+      });
+      setSelectedItem(null);
+      setEditIndex(null);
+      setHeroQuantity(1);
+      return;
+    }
+    if (selectedItem.waterSizes) {
+      const chosen = selectedItem.waterSizes.find(option => option.label === waterSize) || selectedItem.waterSizes[0];
+      const waterItem = { ...selectedItem, waterSize: chosen.label, name: `Water (${chosen.label})`, price: chosen.price, total: chosen.price, addons: [] };
+      setCart(prev => {
+        const copies = Array.from({ length: heroQuantity }, () => ({ ...waterItem }));
         if (editIndex === null) return [...prev, ...copies];
         const updated = [...prev];
         updated.splice(editIndex, 1, ...copies);
@@ -896,8 +923,13 @@ function App() {
     });
     const itemWithAddons = {
       ...selectedItem,
+      ...(selectedItem.id === '#22' ? {
+        customItemText: customItemText.trim(),
+        name: customItemText.trim() || 'Custom',
+        price: Math.max(0, Number(customItemPrice) || 0),
+      } : {}),
       addons,
-      total: selectedItem.price + addons.reduce((sum, a) => sum + a.price * a.qty, 0),
+      total: (selectedItem.id === '#22' ? Math.max(0, Number(customItemPrice) || 0) : selectedItem.price) + addons.reduce((sum, a) => sum + a.price * a.qty, 0),
     };
     setCart((prev) => {
       const updated = [...prev];
@@ -1111,7 +1143,7 @@ return (
             onClick={() => openCustomization(item)}
           >
             <strong>{item.name}</strong>
-            {((!["Hot Food – Catering", "Platters – Catering", "Salads – Catering", "Breakfast – Catering", "Melody Lanes – Catering"].includes(item.category) && item.id !== "bread8" && !item.appetizerSize) || item.fixedPrice != null) && <div>{item.category === "Party Heroes – Catering" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
+            {((!["Hot Food – Catering", "Platters – Catering", "Salads – Catering", "Breakfast – Catering", "Melody Lanes – Catering"].includes(item.category) && item.id !== "bread8" && !item.appetizerSize && !item.waterSizes) || item.fixedPrice != null) && <div>{item.category === "Party Heroes – Catering" ? `$${item.pricePerFoot.toFixed(2)}/ft` : `$${item.price.toFixed(2)}`}</div>}
           </div>
         ))}
       </div>
@@ -1205,6 +1237,39 @@ return (
               ))}
             </div>
             <p><strong>Total: ${((selectedItem.coffeePrices ? selectedItem.coffeePrices[cateringOption] : cateringOption === 'deep' ? selectedItem.deepPrice : cateringOption === 'full' ? selectedItem.fullPrice : cateringOption === 'pound' ? selectedItem.poundPrice : cateringOption === 'person' ? selectedItem.personPrice : selectedItem.halfPrice) * heroQuantity).toFixed(2)}</strong></p>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button onClick={saveToCart} style={{ background: '#008C45', color: '#fff', border: 0, borderRadius: 7, padding: '10px 14px' }}>{editIndex === null ? 'Add' : 'Save'} {heroQuantity} to Cart</button>
+              <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '10px 14px' }}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedItem?.waterSizes && (
+        <div className="lioni-overlay" onClick={e => { if (e.target === e.currentTarget) { setSelectedItem(null); setEditIndex(null); } }} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }}>
+          <div className="lioni-dialog" style={{ background: '#fff', borderRadius: 16, padding: 20, width: '90%', maxWidth: 390, boxShadow: '0 4px 16px rgba(0,0,0,.2)' }}>
+            <h2 style={{ marginTop: 0 }}>Customize Water</h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '16px 0' }}>
+              <strong>Quantity</strong>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <button type="button" onClick={() => setHeroQuantity(q => Math.max(1, q - 1))} disabled={heroQuantity === 1} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>−</button>
+                <strong>{heroQuantity}</strong>
+                <button type="button" onClick={() => setHeroQuantity(q => Math.min(99, q + 1))} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>+</button>
+              </div>
+            </div>
+            <div role="radiogroup" aria-label="Select water size">
+              <strong style={{ display: 'block', marginBottom: 8 }}>Select Water Size</strong>
+              {selectedItem.waterSizes.map(option => (
+                <label key={option.label} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: 12, marginBottom: 8, border: `2px solid ${waterSize === option.label ? '#008C45' : '#ddd'}`, borderRadius: 10, cursor: 'pointer', background: waterSize === option.label ? '#f0faf4' : '#fff' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <input type="radio" name="waterSize" checked={waterSize === option.label} onChange={() => setWaterSize(option.label)} style={{ accentColor: '#008C45', width: 18, height: 18 }} />
+                    <strong>{option.label}</strong>
+                  </span>
+                  <strong>${option.price.toFixed(2)}</strong>
+                </label>
+              ))}
+            </div>
+            <p><strong>Total: ${((selectedItem.waterSizes.find(option => option.label === waterSize) || selectedItem.waterSizes[0]).price * heroQuantity).toFixed(2)}</strong></p>
             <div style={{ display: 'flex', gap: 8 }}>
               <button onClick={saveToCart} style={{ background: '#008C45', color: '#fff', border: 0, borderRadius: 7, padding: '10px 14px' }}>{editIndex === null ? 'Add' : 'Save'} {heroQuantity} to Cart</button>
               <button onClick={() => { setSelectedItem(null); setEditIndex(null); }} style={{ border: '1px solid #ccc', borderRadius: 7, padding: '10px 14px' }}>Cancel</button>
@@ -1382,6 +1447,18 @@ return (
                 <button type="button" onClick={() => setHeroQuantity(q => Math.min(99, q + 1))} style={{ minWidth: 42, minHeight: 42, borderRadius: 8, fontSize: 20 }}>+</button>
               </div>
             </div>
+            {selectedItem.id === '#22' && (
+              <label style={{ display: 'block', marginBottom: 12, fontSize: 14, fontWeight: 700 }}>
+                Custom Item Description
+                <input type="text" value={customItemText} onChange={e => setCustomItemText(e.target.value)}
+                  placeholder="Enter custom item name or details"
+                  style={{ display: 'block', width: '100%', boxSizing: 'border-box', padding: 10, marginTop: 6, border: '1px solid #ccc', borderRadius: 8, fontSize: 16 }} />
+                <span style={{ display: 'block', marginTop: 12 }}>Manual Price ($)</span>
+                <input type="number" min="0" step="0.01" inputMode="decimal" value={customItemPrice}
+                  onChange={e => setCustomItemPrice(e.target.value)} placeholder="0.00"
+                  style={{ display: 'block', width: '100%', boxSizing: 'border-box', padding: 10, marginTop: 6, border: '1px solid #ccc', borderRadius: 8, fontSize: 16 }} />
+              </label>
+            )}
                         <input
               type="text"
               value={addonSearch}
@@ -1479,7 +1556,7 @@ return (
               <div key={idx} style={{ background: '#F4F5F0', padding: 16, width: '100%', boxSizing: 'border-box', borderRadius: 0, marginBottom: 10 }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'nowrap', overflowX: 'auto', maxWidth: '100%', WebkitOverflowScrolling: 'touch', paddingBottom: 2 }}>
-                    <span style={{ whiteSpace: 'nowrap', flexShrink: 0, fontSize: 14 }}><strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''}{!(item.category?.includes('Hero') && item.category !== 'Party Heroes – Catering') ? ` - $${item.total.toFixed(2)}` : ''}</span>
+                    <span style={{ whiteSpace: 'nowrap', flexShrink: 0, fontSize: 14 }}><strong>{item.name}</strong>{item.quantity > 1 ? ` × ${item.quantity}` : ''}{item.quantity === 1 && !(item.category?.includes('Hero') && item.category !== 'Party Heroes – Catering') ? ` - $${item.total.toFixed(2)}` : ''}</span>
                     {(item.category?.includes('Hero') && item.category !== 'Party Heroes – Catering') && (
                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
                         <input
@@ -1513,6 +1590,11 @@ return (
                       <button type="button" aria-label={`Increase quantity of ${item.name}`} disabled={item.quantity >= 99} onClick={() => changeCartQuantity(item.indexes, 1)} style={{ width: 30, height: 34, flexShrink: 0, borderRadius: 7, border: '1px solid #008C45', background: '#008C45', color: '#fff', fontSize: 19, fontWeight: 700, opacity: item.quantity >= 99 ? 0.4 : 1 }}>+</button>
                     </div>
                   </div>
+                  {item.quantity > 1 && (
+                    <div style={{ marginTop: 6, fontSize: 14, fontWeight: 700 }}>
+                      Total: ${item.total.toFixed(2)}
+                    </div>
+                  )}
                   <div style={{ display: 'flex', gap: 8, marginTop: 7 }}>
                   <button onClick={() => { setShowCart(false); openCustomization(cart[item.indexes[0]], item.indexes[0]); }} style={{ fontSize: 13, padding: '4px 8px' }}>Edit</button>
                   <button onClick={() => setCart(prev => prev.filter((_, i) => !item.indexes.includes(i)))} style={{ fontSize: 13, padding: '4px 8px', color: '#CD212A' }}>Remove</button>
