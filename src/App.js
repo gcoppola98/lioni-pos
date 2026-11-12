@@ -186,7 +186,7 @@ const items = [
   { id: "B8", name: "Gatorade", price: 3.0, category: "Beverages" },
   { id: "B9", name: "Vitamin Water", price: 3.0, category: "Beverages" },
 
-  { id: "C1", name: "Hals", price: 2.5, category: "Chips" },
+  { id: "C1", name: "Hals", price: 2.0, category: "Chips" },
   { id: "C2", name: "Small Wise", price: 3.0, category: "Chips" },
   { id: "C3", name: "Large Wise", price: 6.0, category: "Chips" },
 
